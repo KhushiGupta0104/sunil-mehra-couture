@@ -71,7 +71,7 @@ export default function Featured() {
     return (
         <section
             id="featured"
-            className="bg-[var(--bone)] py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-20"
+            className="bg-[var(--bone)] pt-8 sm:pt-10 lg:pt-12 pb-16 sm:pb-20 lg:pb-24 px-6 sm:px-12 lg:px-20"
             data-testid="featured-section"
         >
             <div className="max-w-[1300px] mx-auto">
