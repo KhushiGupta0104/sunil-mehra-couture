@@ -20,20 +20,7 @@ export default function Hero() {
 
             {/* Content below the image container */}
             <div className="py-12 sm:py-16 px-6 sm:px-12 lg:px-20 text-center max-w-[850px] mx-auto">
-                <p className="eyebrow mb-4 rise delay-1">Couture 2025</p>
-                <p className="font-italic-serif text-lg sm:text-xl text-[var(--muted)] mb-3 rise delay-2">
-                    The Mirage Edit
-                </p>
-                <h1 className="h-display text-4xl sm:text-5xl lg:text-6.5xl leading-[1.15] text-[var(--ink)] rise delay-3">
-                    The art of <span className="font-italic-serif italic font-light">undoing.</span>
-                </h1>
-                <p className="font-body text-sm sm:text-base leading-relaxed text-[var(--ink-soft)] mt-6 max-w-xl mx-auto opacity-80 rise delay-4">
-                    A new chapter from the atelier — silk, linen and silver,
-                    hand-built by a single karigar. Eight weeks. Three fittings.
-                    Twenty-eight measurements.
-                </p>
-
-                <div className="mt-8 flex flex-wrap items-center justify-center gap-4 rise delay-5">
+                <div className="flex flex-wrap items-center justify-center gap-4 rise delay-1">
                     <a
                         href="#featured"
                         className="bg-[var(--ink)] text-[var(--bone)] hover:bg-transparent hover:text-[var(--ink)] border border-[var(--ink)] px-8 py-3.5 text-[10px] tracking-[0.3em] font-luxe uppercase transition-all duration-300"
