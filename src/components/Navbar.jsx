@@ -3,50 +3,76 @@ import React from "react";
 export default function Navbar({ onMenuOpen, menuOpen }) {
     return (
         <header
-            className="fixed top-0 left-0 right-0 z-50 flex flex-col w-full"
+            className="fixed top-0 left-0 right-0 z-50 flex flex-col w-full bg-[var(--bone)] text-[var(--ink)] border-b border-[var(--hairline)]"
             data-testid="site-navbar"
         >
-            {/* Top Tier: Brand Wordmark (cream background) */}
-            <div className="bg-[var(--bone)] border-b border-[var(--hairline)] py-3 sm:py-4 flex justify-center items-center w-full">
-                <a href="/" className="text-center" data-testid="navbar-brand">
-                    <p className="font-display text-[clamp(18px,2vw,24px)] leading-none tracking-[0.18em] text-[var(--ink)]">
+            {/* Top Tier: Currency, Brand Name, Search & Bag */}
+            <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14 py-4 sm:py-5 flex items-center justify-between w-full">
+                {/* Left — Currency selector */}
+                <div className="flex items-center w-1/3">
+                    <span className="text-[10px] tracking-[0.25em] font-luxe opacity-75 cursor-pointer hover:opacity-100 transition flex items-center gap-1">
+                        INR <span className="text-[7px]">▼</span>
+                    </span>
+                </div>
+
+                {/* Center — Brand Wordmark */}
+                <a href="/" className="text-center w-1/3 flex flex-col items-center" data-testid="navbar-brand">
+                    <p className="font-display text-[clamp(18px,2.2vw,26px)] leading-none tracking-[0.18em] text-[var(--ink)]">
                         SUNIL MEHRA
                     </p>
-                    <p className="font-italic-serif text-[9px] sm:text-[10px] opacity-80 mt-1 tracking-[0.2em] text-[var(--ink)]">
+                    <p className="font-italic-serif text-[10px] sm:text-[11px] opacity-80 mt-1.5 tracking-[0.2em] text-[var(--ink)]">
                         couture · est. 1984
                     </p>
                 </a>
+
+                {/* Right — Search and Shopping Bag */}
+                <div className="flex items-center justify-end gap-5 sm:gap-6 text-[10px] text-[var(--ink)] w-1/3">
+                    {/* Search Icon */}
+                    <button className="hover:opacity-60 transition" aria-label="Search">
+                        <svg className="w-[18px] h-[18px] sm:w-5 sm:h-5 text-[var(--ink)]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.602 10.602Z" />
+                        </svg>
+                    </button>
+                    {/* Bag Icon */}
+                    <a href="#" className="hover:opacity-60 transition flex items-center gap-1.5" data-testid="navbar-bag">
+                        <svg className="w-[18px] h-[18px] sm:w-5 sm:h-5 text-[var(--ink)]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                        </svg>
+                        <span className="font-luxe text-[10px] tracking-wider opacity-85">(0)</span>
+                    </a>
+                </div>
             </div>
 
-            {/* Bottom Tier: Black Color Block with Navbar Features */}
-            <div className="bg-[var(--ink)] text-[var(--bone)] px-6 sm:px-10 lg:px-14 py-3.5 flex items-center justify-between w-full shadow-md">
-                {/* Left — menu trigger */}
-                <button
-                    onClick={onMenuOpen}
-                    className="flex items-center gap-3 group text-[var(--bone)]"
-                    data-testid="navbar-menu-btn"
-                    aria-label="Open menu"
-                >
-                    <span className={`burger ${menuOpen ? "open" : ""}`} style={{ color: "var(--bone)" }}>
-                        <span style={{ backgroundColor: "var(--bone)" }}></span>
-                        <span style={{ backgroundColor: "var(--bone)" }}></span>
-                    </span>
-                    <span className="font-luxe uppercase tracking-[0.38em] text-[10px] text-[var(--bone)]">
-                        Index
-                    </span>
-                </button>
+            {/* Bottom Tier: Centered Symmetrical Navigation features */}
+            <div className="border-t border-[var(--hairline)] w-full">
+                <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14 flex items-center justify-center gap-6 sm:gap-8 lg:gap-10 py-3 text-[10px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
+                    {/* Index trigger */}
+                    <button
+                        onClick={onMenuOpen}
+                        className="flex items-center gap-2 group hover:opacity-60 transition"
+                        data-testid="navbar-menu-btn"
+                        aria-label="Open menu"
+                    >
+                        <span className={`burger ${menuOpen ? "open" : ""}`} style={{ gap: "4px", width: "18px" }}>
+                            <span style={{ height: "1px" }}></span>
+                            <span style={{ height: "1px" }}></span>
+                        </span>
+                        <span className="font-luxe text-[10px] uppercase tracking-[0.3em]">
+                            Index
+                        </span>
+                    </button>
 
-                {/* Right — actions */}
-                <div className="flex items-center gap-5 sm:gap-7 text-[10px] uppercase tracking-[0.35em] font-luxe">
-                    <a href="#atelier" className="hidden md:inline hover:opacity-80 transition text-[var(--bone)]" data-testid="navbar-appointment">
-                        Appointment
+                    <a href="#wardrobe" className="hover:opacity-60 transition">
+                        Wardrobe
                     </a>
-                    <a href="#salons" className="hidden lg:inline hover:opacity-80 transition text-[var(--bone)]" data-testid="navbar-salons">
+                    <a href="#featured" className="hover:opacity-60 transition">
+                        Featured
+                    </a>
+                    <a href="#salons" className="hover:opacity-60 transition">
                         Salons
                     </a>
-                    <a href="#" className="hover:opacity-80 transition flex items-center gap-2 text-[var(--bone)]" data-testid="navbar-bag">
-                        <span>Bag</span>
-                        <span className="opacity-60">(0)</span>
+                    <a href="#atelier" className="hover:opacity-60 transition font-medium text-[var(--bronze)]">
+                        Book Appointment
                     </a>
                 </div>
             </div>
