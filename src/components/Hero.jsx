@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
     return (
-        <section className="relative bg-[var(--bone)] text-[var(--ink)] pt-20 sm:pt-24 w-full" data-testid="hero-section">
+        <section className="relative bg-[var(--bone)] text-[var(--ink)] pt-[118px] sm:pt-[130px] w-full" data-testid="hero-section">
             {/* Boxed image container */}
             <div className="px-6 sm:px-12 lg:px-20 pt-6">
                 <div className="relative w-full aspect-[1.8/1] sm:aspect-[21/9] lg:h-[65vh] overflow-hidden bg-[var(--cream)]">
