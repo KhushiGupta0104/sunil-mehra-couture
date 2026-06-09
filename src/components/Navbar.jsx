@@ -14,7 +14,10 @@ export default function Navbar({ onMenuOpen, menuOpen }) {
 
     return (
         <header
-            className="sticky top-0 left-0 right-0 z-50 bg-[var(--bone)] text-[var(--ink)] border-b border-[var(--hairline)]"
+            className={[
+                "fixed top-0 left-0 right-0 z-50 transition-all duration-700",
+                onHero ? "bg-transparent text-[var(--bone)]" : "bg-[var(--bone)] text-[var(--ink)] border-b border-[var(--hairline)]",
+            ].join(" ")}
             data-testid="site-navbar"
         >
             <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14 py-5 flex items-center justify-between">
