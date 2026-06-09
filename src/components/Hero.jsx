@@ -2,92 +2,61 @@ import React from "react";
 
 export default function Hero() {
     return (
-        <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden text-[var(--bone)]" data-testid="hero-section">
-            {/* Background video with fallback poster */}
-            <video
-                className="hero-video"
-                style={{ objectFit: "cover", objectPosition: "center 18%", width: "100%", height: "100%", border: "none", outline: "none" }}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                poster="https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/eof7etf1_image.png"
-                data-testid="hero-video"
-            >
-                <source
-                    src="https://videos.pexels.com/video-files/4666740/4666740-uhd_2560_1440_24fps.mp4"
-                    type="video/mp4"
-                />
-                <source
-                    src="https://videos.pexels.com/video-files/8085836/8085836-uhd_2560_1440_25fps.mp4"
-                    type="video/mp4"
-                />
-            </video>
-            <div className="hero-overlay" />
-            <div className="grain" />
-
-            {/* Top eyebrow + chapter indicator */}
-            <div className="absolute top-24 left-0 right-0 z-10 px-6 sm:px-10 lg:px-14 flex items-center justify-between text-[var(--bone)]">
-                <p className="eyebrow !text-[var(--champagne)] rise delay-1">
-                    Couture 2025
-                </p>
-                <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] font-luxe rise delay-2">
-                    <span>Chapter</span>
-                    <span className="font-display text-2xl leading-none">01</span>
-                    <span className="opacity-50">/</span>
-                    <span className="opacity-70">06</span>
+        <section className="relative bg-[var(--bone)] text-[var(--ink)] pt-20 sm:pt-24 w-full" data-testid="hero-section">
+            {/* Boxed image container */}
+            <div className="px-6 sm:px-12 lg:px-20 pt-6">
+                <div className="relative w-full aspect-[1.8/1] sm:aspect-[21/9] lg:h-[65vh] overflow-hidden bg-[var(--cream)]">
+                    <img
+                        src="https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/eof7etf1_image.png"
+                        alt="Atelier — Sunil Mehra"
+                        className="w-full h-full object-cover"
+                        style={{ objectPosition: "center 18%" }}
+                        data-testid="hero-image"
+                    />
+                    <div className="absolute inset-0 bg-[rgba(20,18,14,0.05)]" />
+                    <div className="grain" />
                 </div>
             </div>
 
-            {/* Side label */}
-            <div className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 z-10 -rotate-90 origin-left">
-                <p className="text-[11px] tracking-[0.4em] uppercase font-luxe opacity-90 rise delay-3">
-                    Photographed in the Thar — film by SM Atelier
-                </p>
-            </div>
-
-            {/* Center title */}
-            <div className="relative z-10 h-full flex flex-col justify-end pb-24 sm:pb-28 px-6 sm:px-10 lg:px-14">
-                <p className="font-italic-serif text-xl sm:text-2xl opacity-90 mb-5 rise delay-2">
+            {/* Content below the image container */}
+            <div className="py-12 sm:py-16 px-6 sm:px-12 lg:px-20 text-center max-w-[850px] mx-auto">
+                <p className="eyebrow mb-4 rise delay-1">Couture 2025</p>
+                <p className="font-italic-serif text-lg sm:text-xl text-[var(--muted)] mb-3 rise delay-2">
                     The Mirage Edit
                 </p>
-                <h1 className="h-display text-[16vw] sm:text-[13vw] lg:text-[9.6vw] leading-[0.92] max-w-[1200px] rise delay-3">
+                <h1 className="h-display text-4xl sm:text-5xl lg:text-6.5xl leading-[1.15] text-[var(--ink)] rise delay-3">
                     The art of <span className="font-italic-serif italic font-light">undoing.</span>
                 </h1>
+                <p className="font-body text-sm sm:text-base leading-relaxed text-[var(--ink-soft)] mt-6 max-w-xl mx-auto opacity-80 rise delay-4">
+                    A new chapter from the atelier — silk, linen and silver,
+                    hand-built by a single karigar. Eight weeks. Three fittings.
+                    Twenty-eight measurements.
+                </p>
 
-                <div className="mt-8 flex flex-col lg:flex-row lg:items-end justify-between gap-8 max-w-[1200px]">
-                    <p className="font-body text-[15px] sm:text-base leading-relaxed opacity-90 max-w-lg rise delay-4">
-                        A new chapter from the atelier — silk, linen and silver,
-                        hand-built by a single karigar. Eight weeks. Three fittings.
-                        Twenty-eight measurements.
-                    </p>
-
-                    <div className="flex flex-wrap items-center gap-4 rise delay-5">
-                        <a
-                            href="#featured"
-                            className="bg-[var(--champagne)] text-[var(--ink)] hover:bg-transparent hover:text-[var(--bone)] border border-[var(--champagne)] px-6 py-3.5 text-[10px] tracking-[0.3em] font-luxe uppercase transition-all duration-300"
-                            data-testid="hero-cta-explore"
-                        >
-                            Explore The Mirage Edit
-                        </a>
-                        <a
-                            href="#atelier"
-                            className="border border-[var(--bone)] text-[var(--bone)] hover:bg-[var(--bone)] hover:text-[var(--ink)] px-6 py-3.5 text-[10px] tracking-[0.3em] font-luxe uppercase transition-all duration-300"
-                            data-testid="hero-cta-book"
-                        >
-                            Book Private Appointment
-                        </a>
-                    </div>
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-4 rise delay-5">
+                    <a
+                        href="#featured"
+                        className="bg-[var(--ink)] text-[var(--bone)] hover:bg-transparent hover:text-[var(--ink)] border border-[var(--ink)] px-8 py-3.5 text-[10px] tracking-[0.3em] font-luxe uppercase transition-all duration-300"
+                        data-testid="hero-cta-explore"
+                    >
+                        Explore The Mirage Edit
+                    </a>
+                    <a
+                        href="#atelier"
+                        className="border border-[var(--ink)] text-[var(--ink)] hover:bg-[var(--ink)] hover:text-[var(--bone)] px-8 py-3.5 text-[10px] tracking-[0.3em] font-luxe uppercase transition-all duration-300"
+                        data-testid="hero-cta-book"
+                    >
+                        Book Private Appointment
+                    </a>
                 </div>
             </div>
 
             {/* Scroll indicator */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-80 rise delay-5">
+            <div className="flex flex-col items-center gap-2 opacity-80 pb-8 rise delay-5">
                 <span className="text-[10px] tracking-[0.4em] font-luxe uppercase">
                     Scroll
                 </span>
-                <span className="w-px h-10 bg-[var(--bone)] opacity-60 animate-pulse" />
+                <span className="w-px h-10 bg-[var(--ink)] opacity-30 animate-pulse" />
             </div>
         </section>
     );
