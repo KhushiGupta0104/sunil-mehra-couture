@@ -9,7 +9,7 @@ export default function Salons() {
         <>
             <section
                 id="salons"
-                className="relative bg-[var(--cream)] py-32 sm:py-40 lg:py-48 px-6 sm:px-12 lg:px-20 scroll-mt-[130px]"
+                className="relative bg-[var(--cream)] py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-20 scroll-mt-[130px]"
                 data-testid="salons-section"
             >
                 <div className="max-w-[1300px] mx-auto">
@@ -60,7 +60,7 @@ export default function Salons() {
 
             <section
                 id="request-form"
-                className="relative bg-[var(--bone)] py-32 sm:py-40 lg:py-48 px-6 sm:px-12 lg:px-20 scroll-mt-[130px] border-t border-[var(--hairline)]"
+                className="relative bg-[var(--bone)] py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-20 scroll-mt-[130px] border-t border-[var(--hairline)]"
                 data-testid="request-form-section"
             >
                 <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">

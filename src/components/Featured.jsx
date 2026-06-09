@@ -71,7 +71,7 @@ export default function Featured() {
     return (
         <section
             id="featured"
-            className="bg-[var(--bone)] py-32 sm:py-40 lg:py-48 px-6 sm:px-12 lg:px-20"
+            className="bg-[var(--bone)] py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-20"
             data-testid="featured-section"
         >
             <div className="max-w-[1300px] mx-auto">
@@ -90,7 +90,7 @@ export default function Featured() {
                 </div>
 
                 {/* ============ SUBSECTION 1: IVORY COLLECTION ============ */}
-                <div className="mb-32 lg:mb-48">
+                <div className="mb-16 lg:mb-24">
                     <div className="mb-14 border-b border-[var(--hairline)] pb-5">
                         <h3 className="font-display text-2xl sm:text-3xl text-[var(--ink)]">
                             The Ivory Chapter

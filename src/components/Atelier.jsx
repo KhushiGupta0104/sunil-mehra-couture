@@ -7,7 +7,7 @@ export default function Atelier() {
     return (
         <section
             id="atelier"
-            className="relative bg-[var(--cream)] py-32 sm:py-40 lg:py-48 px-6 sm:px-12 lg:px-20"
+            className="relative bg-[var(--cream)] py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-20"
             data-testid="atelier-section"
         >
             <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">

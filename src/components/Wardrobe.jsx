@@ -51,7 +51,7 @@ export default function Wardrobe() {
     return (
         <section
             id="wardrobe"
-            className="bg-[var(--bone)] py-32 sm:py-40 lg:py-48 px-6 sm:px-12 lg:px-20"
+            className="bg-[var(--bone)] py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-20"
             data-testid="wardrobe-section"
         >
             <div className="max-w-[1300px] mx-auto">
