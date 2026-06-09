@@ -100,73 +100,30 @@ export default function Featured() {
                         </p>
                     </div>
 
-                    {/* Asymmetric layout grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-20 lg:gap-y-0 items-start">
-                        {/* Product 1: Spans cols 1 to 7 */}
-                        <div className="lg:col-span-7">
-                            <a href="#" className="block group" data-testid={`product-${IVORY_PRODUCTS[0].id}`}>
-                                <div className="product-card aspect-[3.2/4] relative w-full">
-                                    <img src={IVORY_PRODUCTS[0].front} alt={IVORY_PRODUCTS[0].name} className="img-front absolute inset-0 w-full h-full object-cover" />
-                                    <img src={IVORY_PRODUCTS[0].back} alt={IVORY_PRODUCTS[0].name} className="img-back absolute inset-0 w-full h-full object-cover" />
-                                    {IVORY_PRODUCTS[0].tag && (
-                                        <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
-                                            {IVORY_PRODUCTS[0].tag}
+                    {/* Symmetrical 3-column grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                        {IVORY_PRODUCTS.map((prod) => (
+                            <div key={prod.id} className="w-full">
+                                <a href="#" className="block group" data-testid={`product-${prod.id}`}>
+                                    <div className="product-card aspect-[3/4] relative w-full">
+                                        <img src={prod.front} alt={prod.name} className="img-front absolute inset-0 w-full h-full object-cover" />
+                                        <img src={prod.back} alt={prod.name} className="img-back absolute inset-0 w-full h-full object-cover" />
+                                        {prod.tag && (
+                                            <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
+                                                {prod.tag}
+                                            </span>
+                                        )}
+                                        <span className="absolute bottom-5 right-5 z-10 text-[var(--champagne)] text-[9px] uppercase tracking-[0.3em] font-luxe opacity-0 group-hover:opacity-100 transition duration-500">
+                                            Discover Piece →
                                         </span>
-                                    )}
-                                    <span className="absolute bottom-5 right-5 z-10 text-[var(--champagne)] text-[9px] uppercase tracking-[0.3em] font-luxe opacity-0 group-hover:opacity-100 transition duration-500">
-                                        Discover Piece →
-                                    </span>
-                                </div>
-                                <div className="mt-5 flex items-start justify-between gap-4 w-full">
-                                    <p className="h-luxe text-base tracking-[0.05em]">{IVORY_PRODUCTS[0].name}</p>
-                                    <p className="font-display text-lg font-medium whitespace-nowrap">{IVORY_PRODUCTS[0].price}</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        {/* Product 2: Staggered smaller image on the right (cols 9 to 12) */}
-                        <div className="lg:col-span-4 lg:col-start-9 lg:mt-48">
-                            <a href="#" className="block group" data-testid={`product-${IVORY_PRODUCTS[1].id}`}>
-                                <div className="product-card aspect-[2.8/4] relative">
-                                    <img src={IVORY_PRODUCTS[1].front} alt={IVORY_PRODUCTS[1].name} className="img-front absolute inset-0 w-full h-full object-cover" />
-                                    <img src={IVORY_PRODUCTS[1].back} alt={IVORY_PRODUCTS[1].name} className="img-back absolute inset-0 w-full h-full object-cover" />
-                                    {IVORY_PRODUCTS[1].tag && (
-                                        <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
-                                            {IVORY_PRODUCTS[1].tag}
-                                        </span>
-                                    )}
-                                    <span className="absolute bottom-5 right-5 z-10 text-[var(--champagne)] text-[9px] uppercase tracking-[0.3em] font-luxe opacity-0 group-hover:opacity-100 transition duration-500">
-                                        Discover Piece →
-                                    </span>
-                                </div>
-                                <div className="mt-5 flex items-start justify-between gap-4">
-                                    <p className="h-luxe text-base tracking-[0.05em]">{IVORY_PRODUCTS[1].name}</p>
-                                    <p className="font-display text-lg font-medium whitespace-nowrap">{IVORY_PRODUCTS[1].price}</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        {/* Product 3: Offset below and centered (cols 3 to 8) */}
-                        <div className="lg:col-span-6 lg:col-start-3 lg:mt-16">
-                            <a href="#" className="block group" data-testid={`product-${IVORY_PRODUCTS[2].id}`}>
-                                <div className="product-card aspect-[3/4] relative">
-                                    <img src={IVORY_PRODUCTS[2].front} alt={IVORY_PRODUCTS[2].name} className="img-front absolute inset-0 w-full h-full object-cover" />
-                                    <img src={IVORY_PRODUCTS[2].back} alt={IVORY_PRODUCTS[2].name} className="img-back absolute inset-0 w-full h-full object-cover" />
-                                    {IVORY_PRODUCTS[2].tag && (
-                                        <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
-                                            {IVORY_PRODUCTS[2].tag}
-                                        </span>
-                                    )}
-                                    <span className="absolute bottom-5 right-5 z-10 text-[var(--champagne)] text-[9px] uppercase tracking-[0.3em] font-luxe opacity-0 group-hover:opacity-100 transition duration-500">
-                                        Discover Piece →
-                                    </span>
-                                </div>
-                                <div className="mt-5 flex items-start justify-between gap-4">
-                                    <p className="h-luxe text-base tracking-[0.05em]">{IVORY_PRODUCTS[2].name}</p>
-                                    <p className="font-display text-lg font-medium whitespace-nowrap">{IVORY_PRODUCTS[2].price}</p>
-                                </div>
-                            </a>
-                        </div>
+                                    </div>
+                                    <div className="mt-5 flex items-start justify-between gap-4 w-full">
+                                        <p className="h-luxe text-base tracking-[0.05em]">{prod.name}</p>
+                                        <p className="font-display text-lg font-medium whitespace-nowrap">{prod.price}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
