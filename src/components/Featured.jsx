@@ -90,8 +90,8 @@ export default function Featured() {
                 </div>
 
                 {/* ============ SUBSECTION 1: IVORY COLLECTION ============ */}
-                <div className="mb-24 sm:mb-32">
-                    <div className="mb-10 border-b border-[var(--hairline)] pb-5">
+                <div className="mb-32 lg:mb-48">
+                    <div className="mb-14 border-b border-[var(--hairline)] pb-5">
                         <h3 className="font-display text-2xl sm:text-3xl text-[var(--ink)]">
                             The Ivory Chapter
                         </h3>
@@ -100,28 +100,39 @@ export default function Featured() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 lg:gap-x-16 lg:gap-y-24">
-                        {IVORY_PRODUCTS.map((p) => (
-                            <a
-                                key={p.id}
-                                href="#"
-                                className="block group"
-                                data-testid={`product-${p.id}`}
-                            >
-                                <div className="product-card aspect-[2.6/4] relative">
-                                    <img
-                                        src={p.front}
-                                        alt={p.name}
-                                        className="img-front absolute inset-0 w-full h-full object-cover"
-                                    />
-                                    <img
-                                        src={p.back}
-                                        alt={p.name}
-                                        className="img-back absolute inset-0 w-full h-full object-cover"
-                                    />
-                                    {p.tag && (
+                    {/* Asymmetric layout grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-20 lg:gap-y-0 items-start">
+                        {/* Product 1: Spans cols 1 to 7 */}
+                        <div className="lg:col-span-7">
+                            <a href="#" className="block group" data-testid={`product-${IVORY_PRODUCTS[0].id}`}>
+                                <div className="product-card aspect-[3.2/4] relative w-full">
+                                    <img src={IVORY_PRODUCTS[0].front} alt={IVORY_PRODUCTS[0].name} className="img-front absolute inset-0 w-full h-full object-cover" />
+                                    <img src={IVORY_PRODUCTS[0].back} alt={IVORY_PRODUCTS[0].name} className="img-back absolute inset-0 w-full h-full object-cover" />
+                                    {IVORY_PRODUCTS[0].tag && (
                                         <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
-                                            {p.tag}
+                                            {IVORY_PRODUCTS[0].tag}
+                                        </span>
+                                    )}
+                                    <span className="absolute bottom-5 right-5 z-10 text-[var(--champagne)] text-[9px] uppercase tracking-[0.3em] font-luxe opacity-0 group-hover:opacity-100 transition duration-500">
+                                        Discover Piece →
+                                    </span>
+                                </div>
+                                <div className="mt-5 flex items-start justify-between gap-4 w-full">
+                                    <p className="h-luxe text-base tracking-[0.05em]">{IVORY_PRODUCTS[0].name}</p>
+                                    <p className="font-display text-lg font-medium whitespace-nowrap">{IVORY_PRODUCTS[0].price}</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        {/* Product 2: Staggered smaller image on the right (cols 9 to 12) */}
+                        <div className="lg:col-span-4 lg:col-start-9 lg:mt-48">
+                            <a href="#" className="block group" data-testid={`product-${IVORY_PRODUCTS[1].id}`}>
+                                <div className="product-card aspect-[2.8/4] relative">
+                                    <img src={IVORY_PRODUCTS[1].front} alt={IVORY_PRODUCTS[1].name} className="img-front absolute inset-0 w-full h-full object-cover" />
+                                    <img src={IVORY_PRODUCTS[1].back} alt={IVORY_PRODUCTS[1].name} className="img-back absolute inset-0 w-full h-full object-cover" />
+                                    {IVORY_PRODUCTS[1].tag && (
+                                        <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
+                                            {IVORY_PRODUCTS[1].tag}
                                         </span>
                                     )}
                                     <span className="absolute bottom-5 right-5 z-10 text-[var(--champagne)] text-[9px] uppercase tracking-[0.3em] font-luxe opacity-0 group-hover:opacity-100 transition duration-500">
@@ -129,19 +140,39 @@ export default function Featured() {
                                     </span>
                                 </div>
                                 <div className="mt-5 flex items-start justify-between gap-4">
-                                    <p className="h-luxe text-base tracking-[0.05em]">{p.name}</p>
-                                    <p className="font-display text-lg font-medium whitespace-nowrap">
-                                        {p.price}
-                                    </p>
+                                    <p className="h-luxe text-base tracking-[0.05em]">{IVORY_PRODUCTS[1].name}</p>
+                                    <p className="font-display text-lg font-medium whitespace-nowrap">{IVORY_PRODUCTS[1].price}</p>
                                 </div>
                             </a>
-                        ))}
+                        </div>
+
+                        {/* Product 3: Offset below and centered (cols 3 to 8) */}
+                        <div className="lg:col-span-6 lg:col-start-3 lg:mt-16">
+                            <a href="#" className="block group" data-testid={`product-${IVORY_PRODUCTS[2].id}`}>
+                                <div className="product-card aspect-[3/4] relative">
+                                    <img src={IVORY_PRODUCTS[2].front} alt={IVORY_PRODUCTS[2].name} className="img-front absolute inset-0 w-full h-full object-cover" />
+                                    <img src={IVORY_PRODUCTS[2].back} alt={IVORY_PRODUCTS[2].name} className="img-back absolute inset-0 w-full h-full object-cover" />
+                                    {IVORY_PRODUCTS[2].tag && (
+                                        <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
+                                            {IVORY_PRODUCTS[2].tag}
+                                        </span>
+                                    )}
+                                    <span className="absolute bottom-5 right-5 z-10 text-[var(--champagne)] text-[9px] uppercase tracking-[0.3em] font-luxe opacity-0 group-hover:opacity-100 transition duration-500">
+                                        Discover Piece →
+                                    </span>
+                                </div>
+                                <div className="mt-5 flex items-start justify-between gap-4">
+                                    <p className="h-luxe text-base tracking-[0.05em]">{IVORY_PRODUCTS[2].name}</p>
+                                    <p className="font-display text-lg font-medium whitespace-nowrap">{IVORY_PRODUCTS[2].price}</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 {/* ============ SUBSECTION 2: OCHRE & INDIGO CHAPTERS ============ */}
                 <div>
-                    <div className="mb-10 border-b border-[var(--hairline)] pb-5">
+                    <div className="mb-14 border-b border-[var(--hairline)] pb-5">
                         <h3 className="font-display text-2xl sm:text-3xl text-[var(--ink)]">
                             The Ochre & Indigo Chapters
                         </h3>
@@ -150,28 +181,39 @@ export default function Featured() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 lg:gap-x-16 lg:gap-y-24">
-                        {COLORED_PRODUCTS.map((p) => (
-                            <a
-                                key={p.id}
-                                href="#"
-                                className="block group"
-                                data-testid={`product-${p.id}`}
-                            >
-                                <div className="product-card aspect-[2.6/4] relative">
-                                    <img
-                                        src={p.front}
-                                        alt={p.name}
-                                        className="img-front absolute inset-0 w-full h-full object-cover"
-                                    />
-                                    <img
-                                        src={p.back}
-                                        alt={p.name}
-                                        className="img-back absolute inset-0 w-full h-full object-cover"
-                                    />
-                                    {p.tag && (
+                    {/* Asymmetric layout grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-20 lg:gap-y-0 items-start">
+                        {/* Product 1: Spans cols 2 to 6 */}
+                        <div className="lg:col-span-5 lg:col-start-2 lg:mt-24">
+                            <a href="#" className="block group" data-testid={`product-${COLORED_PRODUCTS[0].id}`}>
+                                <div className="product-card aspect-[3.2/4] relative w-full">
+                                    <img src={COLORED_PRODUCTS[0].front} alt={COLORED_PRODUCTS[0].name} className="img-front absolute inset-0 w-full h-full object-cover" />
+                                    <img src={COLORED_PRODUCTS[0].back} alt={COLORED_PRODUCTS[0].name} className="img-back absolute inset-0 w-full h-full object-cover" />
+                                    {COLORED_PRODUCTS[0].tag && (
                                         <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
-                                            {p.tag}
+                                            {COLORED_PRODUCTS[0].tag}
+                                        </span>
+                                    )}
+                                    <span className="absolute bottom-5 right-5 z-10 text-[var(--champagne)] text-[9px] uppercase tracking-[0.3em] font-luxe opacity-0 group-hover:opacity-100 transition duration-500">
+                                        Discover Piece →
+                                    </span>
+                                </div>
+                                <div className="mt-5 flex items-start justify-between gap-4 w-full">
+                                    <p className="h-luxe text-base tracking-[0.05em]">{COLORED_PRODUCTS[0].name}</p>
+                                    <p className="font-display text-lg font-medium whitespace-nowrap">{COLORED_PRODUCTS[0].price}</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        {/* Product 2: Spans cols 8 to 12 */}
+                        <div className="lg:col-span-5 lg:col-start-8">
+                            <a href="#" className="block group" data-testid={`product-${COLORED_PRODUCTS[1].id}`}>
+                                <div className="product-card aspect-[2.8/4] relative">
+                                    <img src={COLORED_PRODUCTS[1].front} alt={COLORED_PRODUCTS[1].name} className="img-front absolute inset-0 w-full h-full object-cover" />
+                                    <img src={COLORED_PRODUCTS[1].back} alt={COLORED_PRODUCTS[1].name} className="img-back absolute inset-0 w-full h-full object-cover" />
+                                    {COLORED_PRODUCTS[1].tag && (
+                                        <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
+                                            {COLORED_PRODUCTS[1].tag}
                                         </span>
                                     )}
                                     <span className="absolute bottom-5 right-5 z-10 text-[var(--champagne)] text-[9px] uppercase tracking-[0.3em] font-luxe opacity-0 group-hover:opacity-100 transition duration-500">
@@ -179,13 +221,33 @@ export default function Featured() {
                                     </span>
                                 </div>
                                 <div className="mt-5 flex items-start justify-between gap-4">
-                                    <p className="h-luxe text-base tracking-[0.05em]">{p.name}</p>
-                                    <p className="font-display text-lg font-medium whitespace-nowrap">
-                                        {p.price}
-                                    </p>
+                                    <p className="h-luxe text-base tracking-[0.05em]">{COLORED_PRODUCTS[1].name}</p>
+                                    <p className="font-display text-lg font-medium whitespace-nowrap">{COLORED_PRODUCTS[1].price}</p>
                                 </div>
                             </a>
-                        ))}
+                        </div>
+
+                        {/* Product 3: Offset below (cols 4 to 9) */}
+                        <div className="lg:col-span-6 lg:col-start-4 lg:mt-16">
+                            <a href="#" className="block group" data-testid={`product-${COLORED_PRODUCTS[2].id}`}>
+                                <div className="product-card aspect-[3/4] relative">
+                                    <img src={COLORED_PRODUCTS[2].front} alt={COLORED_PRODUCTS[2].name} className="img-front absolute inset-0 w-full h-full object-cover" />
+                                    <img src={COLORED_PRODUCTS[2].back} alt={COLORED_PRODUCTS[2].name} className="img-back absolute inset-0 w-full h-full object-cover" />
+                                    {COLORED_PRODUCTS[2].tag && (
+                                        <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
+                                            {COLORED_PRODUCTS[2].tag}
+                                        </span>
+                                    )}
+                                    <span className="absolute bottom-5 right-5 z-10 text-[var(--champagne)] text-[9px] uppercase tracking-[0.3em] font-luxe opacity-0 group-hover:opacity-100 transition duration-500">
+                                        Discover Piece →
+                                    </span>
+                                </div>
+                                <div className="mt-5 flex items-start justify-between gap-4">
+                                    <p className="h-luxe text-base tracking-[0.05em]">{COLORED_PRODUCTS[2].name}</p>
+                                    <p className="font-display text-lg font-medium whitespace-nowrap">{COLORED_PRODUCTS[2].price}</p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
