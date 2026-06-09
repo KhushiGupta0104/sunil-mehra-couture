@@ -49,13 +49,13 @@ export default function Atelier() {
 
                     <p className="text-[var(--ink-soft)] leading-relaxed mb-8 max-w-lg">
                         Begin your private appointment with our Master Tailor in
-                        Delhi, Mumbai or London — by invitation, always. We sketch
+                        Delhi — by invitation, always. We sketch
                         in your story; the karigar gives it form.
                     </p>
 
                     <div className="flex flex-wrap items-center gap-8">
                         <a
-                            href="#atelier"
+                            href="#request-form"
                             className="hairline-link"
                             data-testid="atelier-book"
                         >

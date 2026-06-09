@@ -9,7 +9,7 @@ const MENU = [
     { label: "The House", hover: "since 1984", href: "#manifesto" },
     { label: "Salons", hover: "by invitation", href: "#salons" },
     { label: "Journal", hover: "from the desk", href: "#editorial" },
-    { label: "Appointment", hover: "private fitting", href: "#atelier" },
+    { label: "Appointment", hover: "private fitting", href: "#request-form" },
 ];
 
 const META = [

@@ -71,7 +71,7 @@ export default function Navbar({ onMenuOpen, menuOpen }) {
                     <a href="#salons" className="hover:opacity-60 transition">
                         Salons
                     </a>
-                    <a href="#atelier" className="hover:opacity-60 transition font-medium text-[var(--bronze)]">
+                    <a href="#request-form" className="hover:opacity-60 transition font-medium text-[var(--bronze)]">
                         Book Appointment
                     </a>
                 </div>
