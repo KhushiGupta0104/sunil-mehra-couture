@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
     return (
-        <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden text-[var(--bone)]" data-testid="hero-section">
+        <section className="relative h-[80vh] min-h-[550px] mx-6 my-6 sm:mx-10 sm:my-10 lg:mx-14 lg:my-14 overflow-hidden text-[var(--bone)] rounded-sm" data-testid="hero-section">
             {/* Background video with fallback poster */}
             <video
                 className="hero-video"
@@ -27,7 +27,7 @@ export default function Hero() {
             <div className="grain" />
 
             {/* Top eyebrow + chapter indicator */}
-            <div className="absolute top-24 left-0 right-0 z-10 px-6 sm:px-10 lg:px-14 flex items-center justify-between text-[var(--bone)]">
+            <div className="absolute top-10 left-0 right-0 z-10 px-6 sm:px-10 lg:px-14 flex items-center justify-between text-[var(--bone)]">
                 <p className="eyebrow !text-[var(--champagne)] rise delay-1">
                     Couture 2025
                 </p>
@@ -47,7 +47,7 @@ export default function Hero() {
             </div>
 
             {/* Center title */}
-            <div className="relative z-10 h-full flex flex-col justify-end pb-28 sm:pb-32 px-6 sm:px-10 lg:px-14">
+            <div className="relative z-10 h-full flex flex-col justify-end pb-16 sm:pb-20 px-6 sm:px-10 lg:px-14">
                 <p className="font-italic-serif text-xl sm:text-2xl opacity-90 mb-5 rise delay-2">
                     The Mirage Edit
                 </p>
