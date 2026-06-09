@@ -1,4 +1,5 @@
 import React from "react";
+import coverImg from "@/assets/images/cover.jpg";
 
 export default function Hero() {
     return (
@@ -7,10 +8,10 @@ export default function Hero() {
             <div className="px-6 sm:px-12 lg:px-20 pt-6">
                 <div className="relative w-full aspect-[1.8/1] sm:aspect-[21/9] lg:h-[65vh] overflow-hidden bg-[var(--cream)]">
                     <img
-                        src="https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/eof7etf1_image.png"
+                        src={coverImg}
                         alt="Atelier — Sunil Mehra"
                         className="w-full h-full object-cover"
-                        style={{ objectPosition: "center 18%" }}
+                        style={{ objectPosition: "center 35%" }}
                         data-testid="hero-image"
                     />
                     <div className="absolute inset-0 bg-[rgba(20,18,14,0.05)]" />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import coverImg from "@/assets/images/cover.jpg";
 
 const MENU = [
     { label: "Couture", hover: "the atelier", href: "#wardrobe" },
@@ -99,9 +100,10 @@ export default function OverlayMenu({ open, onClose }) {
                         className="panel-image bg-[var(--cream)]"
                     >
                         <img
-                            src="https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/eof7etf1_image.png"
+                            src={coverImg}
                             alt="Atelier — Sunil Mehra"
                             className="absolute inset-0 w-full h-full object-cover"
+                            style={{ objectPosition: "center 35%" }}
                         />
                         <div className="absolute inset-0 bg-[rgba(20,18,14,0.18)]" />
                         <div className="absolute bottom-10 left-10 right-10 text-[var(--bone)]">
