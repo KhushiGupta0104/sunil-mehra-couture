@@ -1,16 +1,19 @@
 import React from "react";
 
+// Import local image
+import img6602 from "@/assets/images/Sunil Mehra_6602.jpg";
+
 export default function Atelier() {
     return (
         <section
             id="atelier"
-            className="relative bg-[var(--cream)] py-24 sm:py-32 px-6 sm:px-10 lg:px-14"
+            className="relative bg-[var(--cream)] py-32 sm:py-40 lg:py-48 px-6 sm:px-12 lg:px-20"
             data-testid="atelier-section"
         >
-            <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <div className="relative aspect-[4/5] overflow-hidden">
                     <img
-                        src="https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/pz9985kj_image.png"
+                        src={img6602}
                         alt="The Atelier"
                         className="w-full h-full object-cover"
                     />
@@ -24,7 +27,7 @@ export default function Atelier() {
 
                 <div>
                     <p className="eyebrow mb-6">A single hand</p>
-                    <h2 className="h-display text-[9vw] sm:text-[6vw] lg:text-[4.4vw] leading-[0.96] mb-8">
+                    <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4vw] leading-[1.15] mb-8">
                         A single hand, <br />
                         <span className="font-italic-serif italic">from start to finish.</span>
                     </h2>

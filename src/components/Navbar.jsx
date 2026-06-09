@@ -32,7 +32,7 @@ export default function Navbar({ onMenuOpen, menuOpen }) {
                         <span></span>
                         <span></span>
                     </span>
-                    <span className="hidden sm:inline font-luxe uppercase tracking-[0.32em] text-[11px]">
+                    <span className="hidden sm:inline font-luxe uppercase tracking-[0.38em] text-[10px]">
                         Index
                     </span>
                 </button>
@@ -52,7 +52,7 @@ export default function Navbar({ onMenuOpen, menuOpen }) {
                 </a>
 
                 {/* Right — actions */}
-                <div className="flex items-center gap-5 sm:gap-7 text-[11px] uppercase tracking-[0.28em] font-luxe">
+                <div className="flex items-center gap-5 sm:gap-7 text-[10px] uppercase tracking-[0.35em] font-luxe">
                     <a href="#atelier" className="hidden md:inline hover:opacity-60 transition" data-testid="navbar-appointment">
                         Appointment
                     </a>

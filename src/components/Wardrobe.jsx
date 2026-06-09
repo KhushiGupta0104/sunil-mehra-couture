@@ -1,41 +1,49 @@
 import React from "react";
 
+// Import local images
+import img3721 from "@/assets/images/Sunil Mehra_3721.jpg";
+import img0493 from "@/assets/images/Sunil Mehra  0493.jpg";
+import img0904 from "@/assets/images/Sunil Mehra_0904.jpg";
+import img9371 from "@/assets/images/IMG9371 copy.jpg";
+import img0246 from "@/assets/images/Sunil Mehra  0246.jpg";
+import img8657 from "@/assets/images/IMG8657 copy.jpg";
+
 const CATS = [
     {
         no: "01",
         edit: "The Heirloom Edit",
         name: "Sherwani",
-        img: "https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/eof7etf1_image.png",
+        img: img3721,
     },
     {
         no: "02",
         edit: "Tailored Royalty",
         name: "Bandhgala",
-        img: "https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/pz9985kj_image.png",
+        img: img0493,
     },
     {
         no: "03",
         edit: "Quiet Luxury",
         name: "Kurta Sets",
-        img: "https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/eof7etf1_image.png",
+        img: img0904,
     },
     {
         no: "04",
         edit: "Modern Maharaja",
         name: "Indo-Western",
-        img: "https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/pz9985kj_image.png",
+        img: img9371,
     },
     {
         no: "05",
         edit: "Princely Silhouettes",
         name: "Jodhpuri",
-        img: "https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/eof7etf1_image.png",
+        img: img0246,
     },
     {
         no: "06",
         edit: "Sharply Cut",
         name: "Suits",
-        img: "https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/pz9985kj_image.png",
+        img: img8657,
     },
 ];
 
@@ -43,15 +51,15 @@ export default function Wardrobe() {
     return (
         <section
             id="wardrobe"
-            className="bg-[var(--bone)] py-24 sm:py-32 px-6 sm:px-10 lg:px-14"
+            className="bg-[var(--bone)] py-32 sm:py-40 lg:py-48 px-6 sm:px-12 lg:px-20"
             data-testid="wardrobe-section"
         >
-            <div className="max-w-[1500px] mx-auto">
+            <div className="max-w-[1300px] mx-auto">
                 {/* heading row */}
                 <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 sm:mb-24">
                     <div>
                         <p className="eyebrow mb-6">The Wardrobe</p>
-                        <h2 className="h-display text-[10vw] sm:text-[7vw] lg:text-[5.2vw] leading-[0.94] max-w-[900px]">
+                        <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15] max-w-[900px]">
                             Cut for the modern{" "}
                             <span className="font-italic-serif italic">maharaja.</span>
                         </h2>
@@ -68,7 +76,7 @@ export default function Wardrobe() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {CATS.map((c) => (
                         <a
                             key={c.no}

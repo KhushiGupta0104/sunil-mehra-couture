@@ -12,17 +12,17 @@ const ITEMS = Array(2).fill([
 export default function Marquee() {
     return (
         <div
-            className="border-y border-[var(--hairline)] py-5 overflow-hidden bg-[var(--bone)]"
+            className="border-y border-[var(--hairline)] py-3.5 overflow-hidden bg-[var(--bone)]"
             data-testid="marquee-strip"
         >
             <div className="marquee-track">
                 {[...ITEMS, ...ITEMS].map((t, i) => (
                     <span
                         key={i}
-                        className="font-display text-2xl sm:text-3xl tracking-[0.08em] mx-8 flex items-center gap-8 text-[var(--ink)]"
+                        className="font-luxe text-xs tracking-[0.3em] mx-12 flex items-center gap-12 text-[var(--ink)] uppercase"
                     >
                         {t}
-                        <span className="text-[var(--bronze)]">✦</span>
+                        <span className="text-[var(--champagne)]">✦</span>
                     </span>
                 ))}
             </div>

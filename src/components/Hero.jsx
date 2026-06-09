@@ -48,36 +48,35 @@ export default function Hero() {
             </div>
 
             {/* Center title */}
-            <div className="relative z-10 h-full flex flex-col justify-end pb-28 sm:pb-32 px-6 sm:px-10 lg:px-14">
+            <div className="relative z-10 h-full flex flex-col justify-end pb-24 sm:pb-28 px-6 sm:px-10 lg:px-14">
                 <p className="font-italic-serif text-xl sm:text-2xl opacity-90 mb-5 rise delay-2">
                     The Mirage Edit
                 </p>
-                <h1 className="h-display text-[14vw] sm:text-[11vw] lg:text-[8.4vw] leading-[0.92] max-w-[1200px] rise delay-3">
+                <h1 className="h-display text-[16vw] sm:text-[13vw] lg:text-[9.6vw] leading-[0.92] max-w-[1200px] rise delay-3">
                     The art of <span className="font-italic-serif italic font-light">undoing.</span>
                 </h1>
 
-                <div className="mt-10 flex flex-col sm:flex-row sm:items-end justify-between gap-8 max-w-[1100px]">
-                    <p className="font-body text-[15px] sm:text-base leading-relaxed opacity-90 max-w-md rise delay-4">
+                <div className="mt-8 flex flex-col lg:flex-row lg:items-end justify-between gap-8 max-w-[1200px]">
+                    <p className="font-body text-[15px] sm:text-base leading-relaxed opacity-90 max-w-lg rise delay-4">
                         A new chapter from the atelier — silk, linen and silver,
                         hand-built by a single karigar. Eight weeks. Three fittings.
                         Twenty-eight measurements.
                     </p>
 
-                    <div className="flex items-center gap-7 sm:gap-9 rise delay-5">
+                    <div className="flex flex-wrap items-center gap-4 rise delay-5">
                         <a
-                            href="#wardrobe"
-                            className="hairline-link !text-[var(--bone)] !border-[var(--bone)]"
-                            data-testid="hero-cta-discover"
+                            href="#featured"
+                            className="bg-[var(--champagne)] text-[var(--ink)] hover:bg-transparent hover:text-[var(--bone)] border border-[var(--champagne)] px-6 py-3.5 text-[10px] tracking-[0.3em] font-luxe uppercase transition-all duration-300"
+                            data-testid="hero-cta-explore"
                         >
-                            Discover Couture
-                            <span aria-hidden>→</span>
+                            Explore The Mirage Edit
                         </a>
                         <a
-                            href="#editorial"
-                            className="text-[11px] uppercase tracking-[0.32em] font-luxe opacity-80 hover:opacity-100 transition"
-                            data-testid="hero-cta-lookbook"
+                            href="#atelier"
+                            className="border border-[var(--bone)] text-[var(--bone)] hover:bg-[var(--bone)] hover:text-[var(--ink)] px-6 py-3.5 text-[10px] tracking-[0.3em] font-luxe uppercase transition-all duration-300"
+                            data-testid="hero-cta-book"
                         >
-                            View Lookbook
+                            Book Private Appointment
                         </a>
                     </div>
                 </div>

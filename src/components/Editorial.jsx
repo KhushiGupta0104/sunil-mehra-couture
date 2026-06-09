@@ -1,23 +1,28 @@
 import React from "react";
 
+// Import local images
+import img0553 from "@/assets/images/Sunil Mehra  0553.jpg";
+import img0904 from "@/assets/images/Sunil Mehra_0904.jpg";
+import img0039 from "@/assets/images/Sunil Mehra_0039.jpg";
+
 const STORIES = [
     {
         no: "01",
         season: "Couture 2025",
         name: "Mirage",
-        img: "https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/eof7etf1_image.png",
+        img: img0553,
     },
     {
         no: "02",
         season: "Spring Ceremony",
         name: "The Bone Edit",
-        img: "https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/pz9985kj_image.png",
+        img: img0904,
     },
     {
         no: "03",
         season: "Womenswear Edit",
         name: "The Muse",
-        img: "https://customer-assets.emergentagent.com/job_mens-style-elite/artifacts/rernyotw_image.png",
+        img: img0039,
     },
 ];
 
@@ -25,14 +30,14 @@ export default function Editorial() {
     return (
         <section
             id="editorial"
-            className="bg-[var(--bone)] py-24 sm:py-32 px-6 sm:px-10 lg:px-14"
+            className="bg-[var(--bone)] py-32 sm:py-40 lg:py-48 px-6 sm:px-12 lg:px-20"
             data-testid="editorial-section"
         >
-            <div className="max-w-[1500px] mx-auto">
-                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-14 sm:mb-20 gap-6">
+            <div className="max-w-[1300px] mx-auto">
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-16 sm:mb-24 gap-6">
                     <div>
                         <p className="eyebrow mb-5">Editorial</p>
-                        <h2 className="h-display text-[10vw] sm:text-[7vw] lg:text-[5.2vw] leading-[0.94]">
+                        <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15]">
                             Stories, <span className="font-italic-serif italic">in cloth.</span>
                         </h2>
                     </div>
@@ -41,7 +46,7 @@ export default function Editorial() {
                     </a>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                     {STORIES.map((s, i) => (
                         <a
                             key={s.no}

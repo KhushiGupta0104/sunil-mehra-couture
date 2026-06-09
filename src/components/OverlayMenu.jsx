@@ -39,9 +39,9 @@ export default function OverlayMenu({ open, onClose }) {
                     {/* LEFT — links */}
                     <div className="relative flex flex-col justify-between px-6 sm:px-10 lg:px-16 py-10 lg:py-12">
                         <div className="flex items-center justify-between">
-                            <span className="eyebrow">Index — Maison</span>
+                            <span className="eyebrow !text-[var(--champagne)]">Index — Maison</span>
                             <span
-                                className="hairline-link cursor-pointer"
+                                className="hairline-link cursor-pointer !text-[var(--bone)] !border-[var(--bone)]"
                                 onClick={onClose}
                                 data-testid="overlay-menu-close"
                             >
@@ -80,10 +80,10 @@ export default function OverlayMenu({ open, onClose }) {
                         >
                             {META.map((m) => (
                                 <div key={m.label} className="text-xs">
-                                    <p className="font-luxe uppercase tracking-[0.22em] text-[var(--ink)]">
+                                    <p className="font-luxe uppercase tracking-[0.22em] text-[var(--bone)]">
                                         {m.label}
                                     </p>
-                                    <p className="text-[var(--muted)] mt-1 font-italic-serif text-[15px]">
+                                    <p className="text-[var(--champagne)] mt-1 font-italic-serif text-[15px]">
                                         {m.sub}
                                     </p>
                                 </div>
