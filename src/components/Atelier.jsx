@@ -20,7 +20,7 @@ export default function Atelier() {
                     <div className="absolute top-6 left-6 right-6 flex items-center justify-between text-[var(--bone)]">
                         <p className="eyebrow !text-[var(--champagne)]">The Atelier</p>
                         <p className="font-luxe text-[11px] tracking-[0.32em] uppercase">
-                            Delhi · Mumbai · London
+                            Delhi Flagship
                         </p>
                     </div>
                 </div>

@@ -13,9 +13,9 @@ const MENU = [
 ];
 
 const META = [
-    { label: "Delhi · Flagship", sub: "14 Sundar Nagar" },
-    { label: "Mumbai · Salon", sub: "Kala Ghoda" },
-    { label: "London · By Appointment", sub: "Mount Street" },
+    { label: "Delhi · Flagship", sub: "14 Sundar Nagar Market" },
+    { label: "Hours & Access", sub: "Mon–Sat, 11 AM – 7:30 PM" },
+    { label: "Concierge & Fittings", sub: "+91 11 4150 1484" },
 ];
 
 export default function OverlayMenu({ open, onClose }) {
