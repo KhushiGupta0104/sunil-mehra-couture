@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import OverlayMenu from "@/components/OverlayMenu";
 import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
 import Wardrobe from "@/components/Wardrobe";
 import Atelier from "@/components/Atelier";
 import Featured from "@/components/Featured";
@@ -26,7 +25,6 @@ const Home = () => {
 
             <main>
                 <Hero />
-                <Marquee />
                 <Wardrobe />
                 <Atelier />
                 <Featured />
