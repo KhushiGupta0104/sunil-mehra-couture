@@ -45,7 +45,7 @@ export default function Navbar({ onMenuOpen, menuOpen }) {
 
             {/* Bottom Tier: Centered Symmetrical Navigation features */}
             <div className="border-t border-[var(--hairline)] w-full">
-                <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14 flex items-center justify-center gap-6 sm:gap-8 lg:gap-10 py-3 text-[10px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
+                <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14 flex items-center justify-center gap-8 sm:gap-12 lg:gap-16 py-4 text-[10px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
                     {/* Index trigger */}
                     <button
                         onClick={onMenuOpen}
@@ -62,19 +62,19 @@ export default function Navbar({ onMenuOpen, menuOpen }) {
                         </span>
                     </button>
 
-                    <a href="#wardrobe" className="hover:opacity-60 transition">
+                    <a href="#wardrobe" className="hidden lg:inline-block hover:opacity-60 transition">
                         Wardrobe
                     </a>
-                    <a href="#featured" className="hover:opacity-60 transition">
+                    <a href="#featured" className="hidden lg:inline-block hover:opacity-60 transition">
                         Featured
                     </a>
-                    <a href="#gallery" className="hover:opacity-60 transition">
+                    <a href="#gallery" className="hidden lg:inline-block hover:opacity-60 transition">
                         Gallery
                     </a>
-                    <a href="#designer" className="hover:opacity-60 transition">
+                    <a href="#designer" className="hidden lg:inline-block hover:opacity-60 transition">
                         The Designer
                     </a>
-                    <a href="#salons" className="hover:opacity-60 transition">
+                    <a href="#salons" className="hidden lg:inline-block hover:opacity-60 transition">
                         Salons
                     </a>
                     <a href="#request-form" className="hover:opacity-60 transition font-medium text-[var(--bronze)]">

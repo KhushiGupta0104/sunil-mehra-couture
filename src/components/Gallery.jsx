@@ -73,11 +73,11 @@ export default function Gallery() {
     };
 
     return (
-        <section id="gallery" className="bg-[var(--bone)] text-[var(--ink)] py-16 sm:py-20 lg:py-24 border-b border-[var(--hairline)]" data-testid="gallery-section">
+        <section id="gallery" className="bg-[var(--bone)] text-[var(--ink)] py-10 sm:py-12 lg:py-14 border-b border-[var(--hairline)]" data-testid="gallery-section">
             <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14">
                 
                 {/* Header */}
-                <div className="mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div className="mb-8 sm:mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div>
                         <span className="eyebrow block mb-3">Maison — Spotlight</span>
                         <h2 className="h-display text-4xl sm:text-5xl lg:text-6xl max-w-2xl font-light">
@@ -92,7 +92,7 @@ export default function Gallery() {
                         <div 
                             key={celeb.id}
                             className={`group cursor-pointer flex flex-col ${
-                                index % 3 === 1 ? "lg:translate-y-8" : index % 3 === 2 ? "lg:translate-y-16" : ""
+                                index % 3 === 1 ? "lg:translate-y-3" : index % 3 === 2 ? "lg:translate-y-6" : ""
                             }`}
                             onClick={() => setSelectedCeleb(celeb)}
                         >
@@ -101,7 +101,7 @@ export default function Gallery() {
                                 <img
                                     src={celeb.src}
                                     alt={`${celeb.celebrity} in Sunil Mehra`}
-                                    className="w-full h-full object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                                    className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                                 />
                                 
                                 {/* Instagram Overlay */}
@@ -140,9 +140,6 @@ export default function Gallery() {
                         </div>
                     ))}
                 </div>
-
-                {/* Grid Spacer for offset elements */}
-                <div className="hidden lg:block h-16" />
             </div>
 
             {/* Lightbox Modal */}

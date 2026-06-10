@@ -3,7 +3,7 @@ import designerImg from "@/assets/images/sunil_mehra.jpg";
 
 export default function Designer() {
     return (
-        <section id="designer" className="bg-[var(--bone)] text-[var(--ink)] py-16 sm:py-20 lg:py-24 border-b border-[var(--hairline)]" data-testid="designer-section">
+        <section id="designer" className="bg-[var(--bone)] text-[var(--ink)] py-10 sm:py-12 lg:py-14 border-b border-[var(--hairline)]" data-testid="designer-section">
             <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                     
@@ -13,7 +13,7 @@ export default function Designer() {
                             <img
                                 src={designerImg}
                                 alt="Sunil Mehra — The Designer"
-                                className="w-full h-full object-cover object-center transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03]"
+                                className="w-full h-full object-cover object-top transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03]"
                             />
                             <div className="absolute inset-0 bg-black/5 pointer-events-none" />
                             <div className="grain" />
@@ -26,7 +26,7 @@ export default function Designer() {
                         <h2 className="h-display text-4xl sm:text-5xl lg:text-6xl font-light mb-2">
                             Sunil Mehra
                         </h2>
-                        <h3 className="font-italic-serif text-xl sm:text-2xl text-[var(--bronze)] mb-8">
+                        <h3 className="font-italic-serif text-xl sm:text-2xl text-[var(--bronze)] mb-5">
                             Where Couture Meets Divinity
                         </h3>
 

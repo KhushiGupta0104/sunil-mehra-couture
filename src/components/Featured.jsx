@@ -71,13 +71,13 @@ export default function Featured() {
     return (
         <section
             id="featured"
-            className="bg-[var(--bone)] pt-8 sm:pt-10 lg:pt-12 pb-16 sm:pb-20 lg:pb-24 px-6 sm:px-12 lg:px-20"
+            className="bg-[var(--bone)] pt-4 sm:pt-6 lg:pt-8 pb-10 sm:pb-12 lg:pb-14 px-6 sm:px-12 lg:px-20"
             data-testid="featured-section"
         >
             <div className="max-w-[1300px] mx-auto">
                 
                 {/* Global Heading */}
-                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16 sm:mb-24">
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-8 sm:mb-10">
                     <div>
                         <p className="eyebrow mb-5">New In</p>
                         <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15]">
@@ -90,8 +90,8 @@ export default function Featured() {
                 </div>
 
                 {/* ============ SUBSECTION 1: IVORY COLLECTION ============ */}
-                <div className="mb-16 lg:mb-24">
-                    <div className="mb-14 border-b border-[var(--hairline)] pb-5">
+                <div className="mb-10 lg:mb-12">
+                    <div className="mb-8 border-b border-[var(--hairline)] pb-4">
                         <h3 className="font-display text-2xl sm:text-3xl text-[var(--ink)]">
                             The Ivory Chapter
                         </h3>
@@ -106,8 +106,8 @@ export default function Featured() {
                             <div key={prod.id} className="w-full">
                                 <a href="#" className="block group" data-testid={`product-${prod.id}`}>
                                     <div className="product-card aspect-[3/4] relative w-full">
-                                        <img src={prod.front} alt={prod.name} className="img-front absolute inset-0 w-full h-full object-cover" />
-                                        <img src={prod.back} alt={prod.name} className="img-back absolute inset-0 w-full h-full object-cover" />
+                                        <img src={prod.front} alt={prod.name} className="img-front absolute inset-0 w-full h-full object-cover object-top" />
+                                        <img src={prod.back} alt={prod.name} className="img-back absolute inset-0 w-full h-full object-cover object-top" />
                                         {prod.tag && (
                                             <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
                                                 {prod.tag}
@@ -129,7 +129,7 @@ export default function Featured() {
 
                 {/* ============ SUBSECTION 2: OCHRE & INDIGO CHAPTERS ============ */}
                 <div>
-                    <div className="mb-14 border-b border-[var(--hairline)] pb-5">
+                    <div className="mb-8 border-b border-[var(--hairline)] pb-4">
                         <h3 className="font-display text-2xl sm:text-3xl text-[var(--ink)]">
                             The Ochre & Indigo Chapters
                         </h3>
@@ -144,8 +144,8 @@ export default function Featured() {
                             <div key={prod.id} className="w-full">
                                 <a href="#" className="block group" data-testid={`product-${prod.id}`}>
                                     <div className="product-card aspect-[3/4] relative w-full">
-                                        <img src={prod.front} alt={prod.name} className="img-front absolute inset-0 w-full h-full object-cover" />
-                                        <img src={prod.back} alt={prod.name} className="img-back absolute inset-0 w-full h-full object-cover" />
+                                        <img src={prod.front} alt={prod.name} className="img-front absolute inset-0 w-full h-full object-cover object-top" />
+                                        <img src={prod.back} alt={prod.name} className="img-back absolute inset-0 w-full h-full object-cover object-top" />
                                         {prod.tag && (
                                             <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
                                                 {prod.tag}
