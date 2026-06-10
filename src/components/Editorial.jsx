@@ -30,11 +30,11 @@ export default function Editorial() {
     return (
         <section
             id="editorial"
-            className="bg-[var(--bone)] py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-20"
+            className="bg-[var(--bone)] py-6 sm:py-8 lg:py-10 px-6 sm:px-12 lg:px-20"
             data-testid="editorial-section"
         >
             <div className="max-w-[1300px] mx-auto">
-                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-16 sm:mb-24 gap-6">
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-5 sm:mb-6 gap-6">
                     <div>
                         <p className="eyebrow mb-5">Editorial</p>
                         <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15]">
@@ -53,7 +53,7 @@ export default function Editorial() {
                             href="#"
                             className={[
                                 "block group",
-                                i === 1 ? "md:translate-y-12" : "",
+                                i === 1 ? "md:translate-y-4" : "",
                             ].join(" ")}
                             data-testid={`editorial-${s.no}`}
                         >
@@ -61,7 +61,7 @@ export default function Editorial() {
                                 <img
                                     src={s.img}
                                     alt={s.name}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover object-top"
                                 />
                                 <span className="absolute top-5 left-5 font-display text-3xl text-[var(--bone)]">
                                     {s.no}

@@ -73,11 +73,11 @@ export default function Gallery() {
     };
 
     return (
-        <section id="gallery" className="bg-[var(--bone)] text-[var(--ink)] py-10 sm:py-12 lg:py-14 border-b border-[var(--hairline)]" data-testid="gallery-section">
+        <section id="gallery" className="bg-[var(--bone)] text-[var(--ink)] py-6 sm:py-8 lg:py-10 border-b border-[var(--hairline)]" data-testid="gallery-section">
             <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14">
                 
                 {/* Header */}
-                <div className="mb-8 sm:mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div className="mb-5 sm:mb-6 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div>
                         <span className="eyebrow block mb-3">Maison — Spotlight</span>
                         <h2 className="h-display text-4xl sm:text-5xl lg:text-6xl max-w-2xl font-light">

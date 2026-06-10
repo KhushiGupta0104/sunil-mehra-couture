@@ -3,9 +3,9 @@ import coverImg from "@/assets/images/cover.jpg";
 
 export default function Hero() {
     return (
-        <section className="relative bg-[var(--bone)] text-[var(--ink)] pt-[126px] sm:pt-[136px] pb-4 w-full" data-testid="hero-section">
+        <section className="relative bg-[var(--bone)] text-[var(--ink)] pt-[126px] sm:pt-[136px] pb-1 w-full" data-testid="hero-section">
             {/* Boxed image container */}
-            <div className="px-6 sm:px-12 lg:px-20 pt-6">
+            <div className="px-6 sm:px-12 lg:px-20 pt-1">
                 <div className="relative w-full aspect-[1.8/1] sm:aspect-[21/9] lg:h-[65vh] overflow-hidden bg-[var(--cream)]">
                     <video
                         src="/cover.mp4"

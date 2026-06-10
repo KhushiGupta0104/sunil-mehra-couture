@@ -71,13 +71,13 @@ export default function Featured() {
     return (
         <section
             id="featured"
-            className="bg-[var(--bone)] pt-4 sm:pt-6 lg:pt-8 pb-10 sm:pb-12 lg:pb-14 px-6 sm:px-12 lg:px-20"
+            className="bg-[var(--bone)] pt-2 sm:pt-4 lg:pt-6 pb-6 sm:pb-8 lg:pb-10 px-6 sm:px-12 lg:px-20"
             data-testid="featured-section"
         >
             <div className="max-w-[1300px] mx-auto">
                 
                 {/* Global Heading */}
-                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-8 sm:mb-10">
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-5 sm:mb-6">
                     <div>
                         <p className="eyebrow mb-5">New In</p>
                         <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15]">
@@ -90,7 +90,7 @@ export default function Featured() {
                 </div>
 
                 {/* ============ SUBSECTION 1: IVORY COLLECTION ============ */}
-                <div className="mb-10 lg:mb-12">
+                <div className="mb-6 lg:mb-8">
                     <div className="mb-8 border-b border-[var(--hairline)] pb-4">
                         <h3 className="font-display text-2xl sm:text-3xl text-[var(--ink)]">
                             The Ivory Chapter

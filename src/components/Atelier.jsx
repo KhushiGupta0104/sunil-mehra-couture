@@ -7,7 +7,7 @@ export default function Atelier() {
     return (
         <section
             id="atelier"
-            className="relative bg-[var(--cream)] pt-8 sm:pt-10 lg:pt-12 pb-8 sm:pb-10 lg:pb-12 px-6 sm:px-12 lg:px-20"
+            className="relative bg-[var(--cream)] pt-6 sm:pt-8 lg:pt-10 pb-6 sm:pb-8 lg:pb-10 px-6 sm:px-12 lg:px-20"
             data-testid="atelier-section"
         >
             <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -15,7 +15,7 @@ export default function Atelier() {
                     <img
                         src={img6602}
                         alt="The Atelier"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top"
                     />
                     <div className="absolute top-6 left-6 right-6 flex items-center justify-between text-[var(--bone)]">
                         <p className="eyebrow !text-[var(--champagne)]">The Atelier</p>
@@ -27,12 +27,12 @@ export default function Atelier() {
 
                 <div>
                     <p className="eyebrow mb-6">A single hand</p>
-                    <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4vw] leading-[1.15] mb-8">
+                    <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4vw] leading-[1.15] mb-5">
                         A single hand, <br />
                         <span className="font-italic-serif italic">from start to finish.</span>
                     </h2>
 
-                    <div className="grid grid-cols-3 gap-6 border-y border-[var(--hairline-strong)] py-7 mb-8">
+                    <div className="grid grid-cols-3 gap-6 border-y border-[var(--hairline-strong)] py-7 mb-5">
                         {[
                             { n: "08", l: "weeks" },
                             { n: "03", l: "fittings" },
@@ -47,7 +47,7 @@ export default function Atelier() {
                         ))}
                     </div>
 
-                    <p className="text-[var(--ink-soft)] leading-relaxed mb-8 max-w-lg">
+                    <p className="text-[var(--ink-soft)] leading-relaxed mb-5 max-w-lg">
                         Begin your private appointment with our Master Tailor in
                         Delhi — by invitation, always. We sketch
                         in your story; the karigar gives it form.

@@ -51,12 +51,12 @@ export default function Wardrobe() {
     return (
         <section
             id="wardrobe"
-            className="bg-[var(--bone)] pt-10 sm:pt-12 lg:pt-14 pb-4 sm:pb-6 lg:pb-8 px-6 sm:px-12 lg:px-20"
+            className="bg-[var(--bone)] pt-6 sm:pt-8 lg:pt-10 pb-2 sm:pb-4 lg:pb-6 px-6 sm:px-12 lg:px-20"
             data-testid="wardrobe-section"
         >
             <div className="max-w-[1300px] mx-auto">
                 {/* heading row */}
-                <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-8 sm:mb-10">
+                <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-5 sm:mb-6">
                     <div>
                         <p className="eyebrow mb-6">The Wardrobe</p>
                         <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15] max-w-[900px]">

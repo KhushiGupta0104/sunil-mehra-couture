@@ -9,17 +9,17 @@ export default function Salons() {
         <>
             <section
                 id="salons"
-                className="relative bg-[var(--cream)] py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-20 scroll-mt-[130px]"
+                className="relative bg-[var(--cream)] py-6 sm:py-8 lg:py-10 px-6 sm:px-12 lg:px-20 scroll-mt-[130px]"
                 data-testid="salons-section"
             >
                 <div className="max-w-[1300px] mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         <div>
                             <p className="eyebrow mb-6">The Salons</p>
-                            <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15] mb-8">
+                            <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15] mb-4">
                                 By <span className="font-italic-serif italic">invitation.</span>
                             </h2>
-                            <p className="text-[var(--ink-soft)] leading-relaxed max-w-md mb-10">
+                            <p className="text-[var(--ink-soft)] leading-relaxed max-w-md mb-6">
                                 Step inside our flagship salon in Sundar Nagar for a private consultation — espresso, fabric swatches, and the quiet of the atelier.
                             </p>
                             <a
@@ -60,16 +60,16 @@ export default function Salons() {
 
             <section
                 id="request-form"
-                className="relative bg-[var(--bone)] py-16 sm:py-20 lg:py-24 px-6 sm:px-12 lg:px-20 scroll-mt-[130px] border-t border-[var(--hairline)]"
+                className="relative bg-[var(--bone)] py-6 sm:py-8 lg:py-10 px-6 sm:px-12 lg:px-20 scroll-mt-[130px] border-t border-[var(--hairline)]"
                 data-testid="request-form-section"
             >
                 <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
                     <div>
                         <p className="eyebrow mb-6">Private Fitting</p>
-                        <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15] mb-8">
+                        <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15] mb-4">
                             Request an <span className="font-italic-serif italic">appointment.</span>
                         </h2>
-                        <p className="text-[var(--ink-soft)] leading-relaxed mb-6 max-w-md">
+                        <p className="text-[var(--ink-soft)] leading-relaxed mb-4 max-w-md">
                             Submit your details below, and our salon concierge will contact you within 24 hours to schedule your private fitting.
                         </p>
                         <div className="mt-8 pt-8 border-t border-[var(--hairline)] max-w-md">
@@ -83,7 +83,7 @@ export default function Salons() {
                         </div>
                     </div>
                     <div>
-                        <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
+                        <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div className="flex flex-col">
                                     <label className="font-luxe text-[10px] uppercase tracking-wider mb-2 text-[var(--muted)]">

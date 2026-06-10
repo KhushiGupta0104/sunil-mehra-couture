@@ -3,7 +3,7 @@ import designerImg from "@/assets/images/sunil_mehra.jpg";
 
 export default function Designer() {
     return (
-        <section id="designer" className="bg-[var(--bone)] text-[var(--ink)] py-10 sm:py-12 lg:py-14 border-b border-[var(--hairline)]" data-testid="designer-section">
+        <section id="designer" className="bg-[var(--bone)] text-[var(--ink)] py-6 sm:py-8 lg:py-10 border-b border-[var(--hairline)]" data-testid="designer-section">
             <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                     
@@ -26,7 +26,7 @@ export default function Designer() {
                         <h2 className="h-display text-4xl sm:text-5xl lg:text-6xl font-light mb-2">
                             Sunil Mehra
                         </h2>
-                        <h3 className="font-italic-serif text-xl sm:text-2xl text-[var(--bronze)] mb-5">
+                        <h3 className="font-italic-serif text-xl sm:text-2xl text-[var(--bronze)] mb-3">
                             Where Couture Meets Divinity
                         </h3>
 
