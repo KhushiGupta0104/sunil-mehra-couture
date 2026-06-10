@@ -73,31 +73,33 @@ export default function Gallery() {
     };
 
     return (
-        <section id="gallery" className="bg-[var(--bone)] text-[var(--ink)] py-6 sm:py-8 lg:py-10 border-b border-[var(--hairline)]" data-testid="gallery-section">
-            <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14">
+        <section
+            id="gallery"
+            className="relative bg-[var(--bone)] text-[var(--ink)] h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5 border-b border-[var(--hairline)]"
+            data-testid="gallery-section"
+        >
+            <div className="max-w-[1500px] mx-auto w-full h-full flex flex-col justify-between">
                 
                 {/* Header */}
-                <div className="mb-5 sm:mb-6 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div className="mb-4 sm:mb-5 flex flex-col md:flex-row md:items-end justify-between gap-6 shrink-0">
                     <div>
-                        <span className="eyebrow block mb-3">Maison — Spotlight</span>
-                        <h2 className="h-display text-4xl sm:text-5xl lg:text-6xl max-w-2xl font-light">
+                        <span className="eyebrow block mb-2">Maison — Spotlight</span>
+                        <h2 className="h-display text-3xl sm:text-4xl lg:text-5xl font-light">
                             Spotted In <span className="font-italic-serif">Sunil Mehra</span>
                         </h2>
                     </div>
                 </div>
 
-                {/* Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-                    {CELEBRITIES.map((celeb, index) => (
+                {/* Grid (Flex-1 to fit viewport perfectly, 5 columns on desktop) */}
+                <div className="flex-1 min-h-0 w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-4 lg:gap-5">
+                    {CELEBRITIES.map((celeb) => (
                         <div 
                             key={celeb.id}
-                            className={`group cursor-pointer flex flex-col ${
-                                index % 3 === 1 ? "lg:translate-y-3" : index % 3 === 2 ? "lg:translate-y-6" : ""
-                            }`}
+                            className="group cursor-pointer flex flex-col w-full h-full relative"
                             onClick={() => setSelectedCeleb(celeb)}
                         >
                             {/* Image Box */}
-                            <div className="relative aspect-[3/4] overflow-hidden bg-[var(--cream)] border border-[var(--hairline)]">
+                            <div className="relative flex-1 min-h-0 overflow-hidden bg-[var(--cream)] border border-[var(--hairline)]">
                                 <img
                                     src={celeb.src}
                                     alt={`${celeb.celebrity} in Sunil Mehra`}
@@ -107,7 +109,7 @@ export default function Gallery() {
                                 {/* Instagram Overlay */}
                                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                                     <div className="flex flex-col items-center gap-2 text-white">
-                                        <svg className="w-8 h-8 text-white stroke-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <svg className="w-6 h-6 text-white stroke-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth="1.5" />
                                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" strokeWidth="1.5" />
                                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeWidth="2" strokeLinecap="round" />
@@ -124,16 +126,16 @@ export default function Gallery() {
                             </div>
                             
                             {/* Metadata */}
-                            <div className="mt-4 flex justify-between items-start gap-4">
+                            <div className="mt-3 flex justify-between items-start gap-4 shrink-0">
                                 <div>
                                     <h3 className="font-luxe text-xs uppercase tracking-widest text-[var(--ink)] group-hover:text-[var(--bronze)] transition duration-300">
                                         {celeb.celebrity}
                                     </h3>
-                                    <p className="font-italic-serif text-sm text-[var(--muted)] mt-1">
+                                    <p className="font-italic-serif text-sm text-[var(--muted)] mt-0.5">
                                         {celeb.occasion}
                                     </p>
                                 </div>
-                                <span className="font-italic-serif text-sm opacity-50">
+                                <span className="font-italic-serif text-xs opacity-50 mt-1">
                                     0{celeb.id}
                                 </span>
                             </div>

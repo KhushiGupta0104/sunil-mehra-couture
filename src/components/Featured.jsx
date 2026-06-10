@@ -69,43 +69,43 @@ const COLORED_PRODUCTS = [
 
 export default function Featured() {
     return (
-        <section
-            id="featured"
-            className="bg-[var(--bone)] pt-2 sm:pt-4 lg:pt-6 pb-6 sm:pb-8 lg:pb-10 px-6 sm:px-12 lg:px-20"
-            data-testid="featured-section"
-        >
-            <div className="max-w-[1300px] mx-auto">
-                
-                {/* Global Heading */}
-                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-5 sm:mb-6">
-                    <div>
-                        <p className="eyebrow mb-5">New In</p>
-                        <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15]">
-                            Featured <span className="font-italic-serif italic">pieces.</span>
-                        </h2>
+        <>
+            {/* FRAME 1: The Ivory Chapter */}
+            <section
+                id="featured"
+                className="relative bg-[var(--bone)] text-[var(--ink)] h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5"
+                data-testid="featured-section"
+            >
+                <div className="max-w-[1500px] mx-auto w-full h-full flex flex-col justify-between">
+                    {/* Header Row */}
+                    <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-3 sm:mb-4 shrink-0">
+                        <div>
+                            <p className="eyebrow mb-1">New In</p>
+                            <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[3.8vw] leading-[1.15]">
+                                Featured <span className="font-italic-serif italic">pieces.</span>
+                            </h2>
+                        </div>
+                        <a href="#featured-part2" className="hairline-link" data-testid="featured-discover-all">
+                            Discover All <span aria-hidden>→</span>
+                        </a>
                     </div>
-                    <a href="#" className="hairline-link" data-testid="featured-discover-all">
-                        Discover All <span aria-hidden>→</span>
-                    </a>
-                </div>
 
-                {/* ============ SUBSECTION 1: IVORY COLLECTION ============ */}
-                <div className="mb-6 lg:mb-8">
-                    <div className="mb-8 border-b border-[var(--hairline)] pb-4">
-                        <h3 className="font-display text-2xl sm:text-3xl text-[var(--ink)]">
+                    {/* Subsection Divider & Title */}
+                    <div className="mb-4 border-b border-[var(--hairline)] pb-2 shrink-0">
+                        <h3 className="font-display text-xl sm:text-2xl text-[var(--ink)]">
                             The Ivory Chapter
                         </h3>
-                        <p className="font-italic-serif text-[15px] sm:text-base text-[var(--muted)] mt-1.5">
+                        <p className="font-italic-serif text-sm text-[var(--muted)] mt-1">
                             A study in pure silk and light linen, hand-finished in the quiet of the atelier.
                         </p>
                     </div>
 
-                    {/* Symmetrical 3-column grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                    {/* Grid (Flex-1 to fit viewport exactly) */}
+                    <div className="flex-1 min-h-0 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-5">
                         {IVORY_PRODUCTS.map((prod) => (
-                            <div key={prod.id} className="w-full">
-                                <a href="#" className="block group" data-testid={`product-${prod.id}`}>
-                                    <div className="product-card aspect-[3/4] relative w-full">
+                            <div key={prod.id} className="w-full h-full flex flex-col">
+                                <a href="#" className="block w-full h-full flex flex-col group" data-testid={`product-${prod.id}`}>
+                                    <div className="product-card flex-1 min-h-0 relative w-full overflow-hidden border border-[var(--hairline)]">
                                         <img src={prod.front} alt={prod.name} className="img-front absolute inset-0 w-full h-full object-cover object-top" />
                                         <img src={prod.back} alt={prod.name} className="img-back absolute inset-0 w-full h-full object-cover object-top" />
                                         {prod.tag && (
@@ -117,33 +117,48 @@ export default function Featured() {
                                             Discover Piece →
                                         </span>
                                     </div>
-                                    <div className="mt-5 flex items-start justify-between gap-4 w-full">
-                                        <p className="h-luxe text-base tracking-[0.05em]">{prod.name}</p>
-                                        <p className="font-display text-lg font-medium whitespace-nowrap">{prod.price}</p>
+                                    <div className="mt-3 flex items-start justify-between gap-4 w-full shrink-0">
+                                        <p className="h-luxe text-sm tracking-[0.05em]">{prod.name}</p>
+                                        <p className="font-display text-base font-medium whitespace-nowrap">{prod.price}</p>
                                     </div>
                                 </a>
                             </div>
                         ))}
                     </div>
                 </div>
+            </section>
 
-                {/* ============ SUBSECTION 2: OCHRE & INDIGO CHAPTERS ============ */}
-                <div>
-                    <div className="mb-8 border-b border-[var(--hairline)] pb-4">
-                        <h3 className="font-display text-2xl sm:text-3xl text-[var(--ink)]">
+            {/* FRAME 2: The Ochre & Indigo Chapters */}
+            <section
+                id="featured-part2"
+                className="relative bg-[var(--bone)] text-[var(--ink)] h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5"
+                data-testid="featured-section-2"
+            >
+                <div className="max-w-[1500px] mx-auto w-full h-full flex flex-col justify-between">
+                    {/* Header Row */}
+                    <div className="flex items-center justify-between mb-3 sm:mb-4 shrink-0">
+                        <p className="eyebrow">Featured — Chapter II</p>
+                        <span className="text-[10px] tracking-[0.2em] font-luxe opacity-60 uppercase">
+                            Collection 04–06
+                        </span>
+                    </div>
+
+                    {/* Subsection Divider & Title */}
+                    <div className="mb-4 border-b border-[var(--hairline)] pb-2 shrink-0">
+                        <h3 className="font-display text-xl sm:text-2xl text-[var(--ink)]">
                             The Ochre & Indigo Chapters
                         </h3>
-                        <p className="font-italic-serif text-[15px] sm:text-base text-[var(--muted)] mt-1.5">
+                        <p className="font-italic-serif text-sm text-[var(--muted)] mt-1">
                             Rich earth tones and deep indigo shades, tailored for ceremonial presence.
                         </p>
                     </div>
 
-                    {/* Symmetrical 3-column grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                    {/* Grid (Flex-1 to fit viewport exactly) */}
+                    <div className="flex-1 min-h-0 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-5">
                         {COLORED_PRODUCTS.map((prod) => (
-                            <div key={prod.id} className="w-full">
-                                <a href="#" className="block group" data-testid={`product-${prod.id}`}>
-                                    <div className="product-card aspect-[3/4] relative w-full">
+                            <div key={prod.id} className="w-full h-full flex flex-col">
+                                <a href="#" className="block w-full h-full flex flex-col group" data-testid={`product-${prod.id}`}>
+                                    <div className="product-card flex-1 min-h-0 relative w-full overflow-hidden border border-[var(--hairline)]">
                                         <img src={prod.front} alt={prod.name} className="img-front absolute inset-0 w-full h-full object-cover object-top" />
                                         <img src={prod.back} alt={prod.name} className="img-back absolute inset-0 w-full h-full object-cover object-top" />
                                         {prod.tag && (
@@ -155,17 +170,16 @@ export default function Featured() {
                                             Discover Piece →
                                         </span>
                                     </div>
-                                    <div className="mt-5 flex items-start justify-between gap-4 w-full">
-                                        <p className="h-luxe text-base tracking-[0.05em]">{prod.name}</p>
-                                        <p className="font-display text-lg font-medium whitespace-nowrap">{prod.price}</p>
+                                    <div className="mt-3 flex items-start justify-between gap-4 w-full shrink-0">
+                                        <p className="h-luxe text-sm tracking-[0.05em]">{prod.name}</p>
+                                        <p className="font-display text-base font-medium whitespace-nowrap">{prod.price}</p>
                                     </div>
                                 </a>
                             </div>
                         ))}
                     </div>
                 </div>
-
-            </div>
-        </section>
+            </section>
+        </>
     );
 }

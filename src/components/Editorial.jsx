@@ -30,14 +30,16 @@ export default function Editorial() {
     return (
         <section
             id="editorial"
-            className="bg-[var(--bone)] py-6 sm:py-8 lg:py-10 px-6 sm:px-12 lg:px-20"
+            className="relative bg-[var(--bone)] text-[var(--ink)] h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5"
             data-testid="editorial-section"
         >
-            <div className="max-w-[1300px] mx-auto">
-                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-5 sm:mb-6 gap-6">
+            <div className="max-w-[1500px] mx-auto w-full h-full flex flex-col justify-between">
+                
+                {/* Header */}
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-4 sm:mb-5 gap-6 shrink-0">
                     <div>
-                        <p className="eyebrow mb-5">Editorial</p>
-                        <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15]">
+                        <p className="eyebrow mb-2">Editorial</p>
+                        <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[3.8vw] leading-[1.15]">
                             Stories, <span className="font-italic-serif italic">in cloth.</span>
                         </h2>
                     </div>
@@ -46,18 +48,16 @@ export default function Editorial() {
                     </a>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                {/* Grid (Flex-1 to fit viewport exactly) */}
+                <div className="flex-1 min-h-0 w-full grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-4 lg:gap-5">
                     {STORIES.map((s, i) => (
                         <a
                             key={s.no}
                             href="#"
-                            className={[
-                                "block group",
-                                i === 1 ? "md:translate-y-4" : "",
-                            ].join(" ")}
+                            className="block group w-full h-full flex flex-col"
                             data-testid={`editorial-${s.no}`}
                         >
-                            <div className="relative aspect-[4/5] overflow-hidden cat-card">
+                            <div className="relative flex-1 min-h-0 w-full overflow-hidden border border-[var(--hairline)] cat-card">
                                 <img
                                     src={s.img}
                                     alt={s.name}
@@ -67,12 +67,12 @@ export default function Editorial() {
                                     {s.no}
                                 </span>
                             </div>
-                            <div className="mt-5 flex items-baseline justify-between">
+                            <div className="mt-4 flex items-baseline justify-between shrink-0">
                                 <div>
-                                    <p className="font-italic-serif text-lg text-[var(--muted)]">
+                                    <p className="font-italic-serif text-base text-[var(--muted)]">
                                         {s.season}
                                     </p>
-                                    <p className="h-luxe text-xl sm:text-2xl mt-1">
+                                    <p className="h-luxe text-lg sm:text-xl mt-0.5">
                                         {s.name}
                                     </p>
                                 </div>
