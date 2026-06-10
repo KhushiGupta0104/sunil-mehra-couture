@@ -8,30 +8,72 @@ import img4 from "@/assets/images/Sunil Mehra  0553.jpg";
 import img5 from "@/assets/images/Sunil Mehra  0966.jpg";
 import img6 from "@/assets/images/Sunil Mehra_0039.jpg";
 
-const IMAGES = [
-    { id: 1, src: img1, caption: "Heritage Kurta with Delicate Handcrafted Motifs", tag: "Couture" },
-    { id: 2, src: img2, caption: "Classic Cream Sherwani with Zardozi Embroidery", tag: "Atelier" },
-    { id: 3, src: img3, caption: "Intricate Pastel Floral Threadwork Detailing", tag: "Bridal" },
-    { id: 4, src: img4, caption: "Signature Nehru Jacket with Hand-Sewn Accents", tag: "Formal" },
-    { id: 5, src: img5, caption: "Raw Silk Kurta paired with Premium Drape Stole", tag: "Mirage" },
-    { id: 6, src: img6, caption: "Contemporary Indo-Western Silhouette with Modern Cut", tag: "Fusion" },
+const CELEBRITIES = [
+    {
+        id: 1,
+        src: img1,
+        celebrity: "Ranbir Kapoor",
+        caption: "Spotted in Custom Hand-Embroidered Bandhgala",
+        occasion: "Festive Gala, Mumbai",
+        instagramUrl: "https://instagram.com/sunilmehraart",
+    },
+    {
+        id: 2,
+        src: img2,
+        celebrity: "Vicky Kaushal",
+        caption: "Exuding heritage charm in the Ivory Silk Sherwani",
+        occasion: "Promotional Event",
+        instagramUrl: "https://instagram.com/sunilmehraart",
+    },
+    {
+        id: 3,
+        src: img3,
+        celebrity: "Ayushmann Khurrana",
+        caption: "Styled in the Signature Pastel Kurta Set & Drape Stole",
+        occasion: "Filmfare Pre-Gala",
+        instagramUrl: "https://instagram.com/sunilmehraart",
+    },
+    {
+        id: 4,
+        src: img4,
+        celebrity: "Kartik Aaryan",
+        caption: "Seen in the Premium Handcrafted Emerald Nehru Jacket",
+        occasion: "Deepavali Celebration",
+        instagramUrl: "https://instagram.com/sunilmehraart",
+    },
+    {
+        id: 5,
+        src: img5,
+        celebrity: "Ranveer Singh",
+        caption: "Making a statement in the Raw Silk Hand-Cut Kurta",
+        occasion: "Red Carpet, Delhi",
+        instagramUrl: "https://instagram.com/sunilmehraart",
+    },
+    {
+        id: 6,
+        src: img6,
+        celebrity: "Rajkummar Rao",
+        caption: "Styled in the Atelier Contemporary Asymmetric Jacket",
+        occasion: "Special Screening",
+        instagramUrl: "https://instagram.com/sunilmehraart",
+    },
 ];
 
 export default function Gallery() {
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedCeleb, setSelectedCeleb] = useState(null);
 
     const handlePrev = (e) => {
         e.stopPropagation();
-        const currentIndex = IMAGES.findIndex((img) => img.id === selectedImage.id);
-        const prevIndex = (currentIndex - 1 + IMAGES.length) % IMAGES.length;
-        setSelectedImage(IMAGES[prevIndex]);
+        const currentIndex = CELEBRITIES.findIndex((c) => c.id === selectedCeleb.id);
+        const prevIndex = (currentIndex - 1 + CELEBRITIES.length) % CELEBRITIES.length;
+        setSelectedCeleb(CELEBRITIES[prevIndex]);
     };
 
     const handleNext = (e) => {
         e.stopPropagation();
-        const currentIndex = IMAGES.findIndex((img) => img.id === selectedImage.id);
-        const nextIndex = (currentIndex + 1) % IMAGES.length;
-        setSelectedImage(IMAGES[nextIndex]);
+        const currentIndex = CELEBRITIES.findIndex((c) => c.id === selectedCeleb.id);
+        const nextIndex = (currentIndex + 1) % CELEBRITIES.length;
+        setSelectedCeleb(CELEBRITIES[nextIndex]);
     };
 
     return (
@@ -41,44 +83,65 @@ export default function Gallery() {
                 {/* Header */}
                 <div className="mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div>
-                        <span className="eyebrow block mb-3">Maison — Gallery</span>
+                        <span className="eyebrow block mb-3">Maison — Spotlight</span>
                         <h2 className="h-display text-4xl sm:text-5xl lg:text-6xl max-w-2xl font-light">
-                            Visual Stories in <span className="font-italic-serif">Cloth & Art</span>
+                            Spotted In <span className="font-italic-serif">Sunil Mehra</span>
                         </h2>
                     </div>
                     <p className="text-[var(--muted)] font-italic-serif text-lg max-w-sm">
-                        A curation of hand-built couture, highlighting the mastery of craft, alignment, and karigari.
+                        Celebrity placements and editorial features captured from our official Instagram updates.
                     </p>
                 </div>
 
-                {/* Editorial Offset Grid */}
+                {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-                    {IMAGES.map((img, index) => (
+                    {CELEBRITIES.map((celeb, index) => (
                         <div 
-                            key={img.id}
+                            key={celeb.id}
                             className={`group cursor-pointer flex flex-col ${
                                 index % 3 === 1 ? "lg:translate-y-8" : index % 3 === 2 ? "lg:translate-y-16" : ""
                             }`}
-                            onClick={() => setSelectedImage(img)}
+                            onClick={() => setSelectedCeleb(celeb)}
                         >
+                            {/* Image Box */}
                             <div className="relative aspect-[3/4] overflow-hidden bg-[var(--cream)] border border-[var(--hairline)]">
                                 <img
-                                    src={img.src}
-                                    alt={img.caption}
+                                    src={celeb.src}
+                                    alt={`${celeb.celebrity} in Sunil Mehra`}
                                     className="w-full h-full object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                
+                                {/* Instagram Overlay */}
+                                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                    <div className="flex flex-col items-center gap-2 text-white">
+                                        <svg className="w-8 h-8 text-white stroke-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth="1.5" />
+                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" strokeWidth="1.5" />
+                                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeWidth="2" strokeLinecap="round" />
+                                        </svg>
+                                        <span className="font-luxe text-[8px] uppercase tracking-[0.25em]">
+                                            View Style Details
+                                        </span>
+                                    </div>
+                                </div>
+
                                 <span className="absolute top-4 left-4 bg-[var(--ink)] text-[var(--champagne)] font-luxe text-[8px] uppercase tracking-[0.2em] px-3 py-1.5 shadow-sm">
-                                    {img.tag}
+                                    @{celeb.celebrity.toLowerCase().replace(/\s+/g, "")}
                                 </span>
                             </div>
                             
+                            {/* Metadata */}
                             <div className="mt-4 flex justify-between items-start gap-4">
-                                <p className="font-luxe text-xs uppercase tracking-widest text-[var(--ink)] group-hover:text-[var(--bronze)] transition duration-300">
-                                    {img.caption}
-                                </p>
+                                <div>
+                                    <h3 className="font-luxe text-xs uppercase tracking-widest text-[var(--ink)] group-hover:text-[var(--bronze)] transition duration-300">
+                                        {celeb.celebrity}
+                                    </h3>
+                                    <p className="font-italic-serif text-sm text-[var(--muted)] mt-1">
+                                        {celeb.occasion}
+                                    </p>
+                                </div>
                                 <span className="font-italic-serif text-sm opacity-50">
-                                    0{img.id}
+                                    0{celeb.id}
                                 </span>
                             </div>
                         </div>
@@ -91,21 +154,21 @@ export default function Gallery() {
 
             {/* Lightbox Modal */}
             <AnimatePresence>
-                {selectedImage && (
+                {selectedCeleb && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onClick={() => setSelectedImage(null)}
+                        onClick={() => setSelectedCeleb(null)}
                         className="fixed inset-0 z-[100] flex flex-col justify-between bg-black/95 backdrop-blur-md p-6 sm:p-10"
                     >
                         {/* Lightbox Top */}
                         <div className="flex justify-between items-center w-full shrink-0">
                             <span className="font-luxe text-[9px] uppercase tracking-[0.3em] text-[var(--champagne)]">
-                                Gallery — 0{selectedImage.id} of 0{IMAGES.length}
+                                SPOTLIGHT — 0{selectedCeleb.id} of 0{CELEBRITIES.length}
                             </span>
                             <button
-                                onClick={() => setSelectedImage(null)}
+                                onClick={() => setSelectedCeleb(null)}
                                 className="font-luxe text-[10px] uppercase tracking-[0.3em] text-white hover:text-[var(--champagne)] border border-white/20 hover:border-[var(--champagne)] px-6 py-3 transition duration-300"
                             >
                                 Close <span aria-hidden>×</span>
@@ -125,7 +188,7 @@ export default function Gallery() {
 
                             {/* Image wrapper */}
                             <motion.div
-                                key={selectedImage.id}
+                                key={selectedCeleb.id}
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.95 }}
@@ -133,9 +196,9 @@ export default function Gallery() {
                                 className="max-w-full max-h-full aspect-[3/4] overflow-hidden"
                             >
                                 <img
-                                    src={selectedImage.src}
-                                    alt={selectedImage.caption}
-                                    className="max-w-full max-h-[70vh] object-contain mx-auto shadow-2xl"
+                                    src={selectedCeleb.src}
+                                    alt={`${selectedCeleb.celebrity} in Sunil Mehra`}
+                                    className="max-w-full max-h-[65vh] sm:max-h-[70vh] object-contain mx-auto shadow-2xl border border-white/10"
                                 />
                             </motion.div>
 
@@ -150,13 +213,28 @@ export default function Gallery() {
                         </div>
 
                         {/* Lightbox Bottom */}
-                        <div className="text-center shrink-0 max-w-xl mx-auto">
-                            <span className="bg-[var(--bronze)] text-[var(--bone)] font-luxe text-[8px] uppercase tracking-[0.2em] px-3 py-1 rounded-sm">
-                                {selectedImage.tag}
+                        <div className="text-center shrink-0 max-w-xl mx-auto flex flex-col items-center">
+                            <span className="font-luxe text-[9px] uppercase tracking-[0.2em] text-[var(--champagne)]">
+                                {selectedCeleb.celebrity} — {selectedCeleb.occasion}
                             </span>
-                            <p className="font-display text-white text-lg sm:text-xl lg:text-2xl mt-4">
-                                {selectedImage.caption}
+                            <p className="font-display text-white text-lg sm:text-xl lg:text-2xl mt-3">
+                                {selectedCeleb.caption}
                             </p>
+                            
+                            <a
+                                href={selectedCeleb.instagramUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="mt-5 inline-flex items-center gap-2 bg-white/10 hover:bg-[var(--champagne)] text-white hover:text-[var(--ink)] font-luxe text-[9px] uppercase tracking-[0.25em] px-6 py-3 border border-white/10 hover:border-transparent transition-all duration-300"
+                            >
+                                <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeLinecap="round" />
+                                </svg>
+                                View on Instagram
+                            </a>
                         </div>
                     </motion.div>
                 )}
