@@ -21,7 +21,7 @@ export default function Hero() {
                     muted
                     playsInline
                     className="absolute inset-0 w-full h-full object-cover"
-                    style={{ objectPosition: "center bottom" }}
+                    style={{ objectPosition: "center top" }}
                     data-testid="hero-video"
                 />
                 <div className="absolute inset-0 bg-[rgba(20,18,14,0.05)]" />
