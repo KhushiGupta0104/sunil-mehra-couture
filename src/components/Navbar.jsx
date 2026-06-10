@@ -7,7 +7,7 @@ export default function Navbar({ onMenuOpen, menuOpen }) {
             data-testid="site-navbar"
         >
             {/* Top Tier: Currency, Brand Name, Search & Bag */}
-            <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14 py-2.5 sm:py-3.5 flex items-center justify-between w-full">
+            <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14 pt-3 pb-1.5 sm:pt-4 sm:pb-2 flex items-center justify-between w-full">
                 {/* Left — Currency selector */}
                 <div className="flex items-center w-1/3">
                     <span className="text-[10px] tracking-[0.25em] font-luxe opacity-75 cursor-pointer hover:opacity-100 transition flex items-center gap-1">

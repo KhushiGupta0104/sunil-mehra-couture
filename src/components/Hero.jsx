@@ -3,7 +3,7 @@ import coverImg from "@/assets/images/cover.jpg";
 
 export default function Hero() {
     return (
-        <section className="relative bg-[var(--bone)] text-[var(--ink)] h-screen w-full flex flex-col pt-[78px] sm:pt-[86px] lg:pt-[96px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5" data-testid="hero-section">
+        <section className="relative bg-[var(--bone)] text-[var(--ink)] h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5" data-testid="hero-section">
             {/* Boxed framed image container */}
             <div className="relative w-full h-full overflow-hidden bg-[var(--cream)]">
                 {/* Fallback Image: Renders perfectly with object-fit: cover and object-position: center bottom */}
