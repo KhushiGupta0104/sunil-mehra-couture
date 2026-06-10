@@ -68,6 +68,9 @@ export default function Navbar({ onMenuOpen, menuOpen }) {
                     <a href="#featured" className="hover:opacity-60 transition">
                         Featured
                     </a>
+                    <a href="#gallery" className="hover:opacity-60 transition">
+                        Gallery
+                    </a>
                     <a href="#salons" className="hover:opacity-60 transition">
                         Salons
                     </a>

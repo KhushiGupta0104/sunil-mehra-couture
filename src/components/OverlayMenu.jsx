@@ -6,6 +6,7 @@ const MENU = [
     { label: "Couture", hover: "the atelier", href: "#wardrobe" },
     { label: "The Wardrobe", hover: "six chapters", href: "#wardrobe" },
     { label: "Featured", hover: "new in", href: "#featured" },
+    { label: "Gallery", hover: "visual stories", href: "#gallery" },
     { label: "Lookbook", hover: "stories in cloth", href: "#editorial" },
     { label: "The House", hover: "since 1984", href: "#manifesto" },
     { label: "Salons", hover: "by invitation", href: "#salons" },

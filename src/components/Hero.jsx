@@ -22,17 +22,6 @@ export default function Hero() {
                     <div className="grain" />
                 </div>
             </div>
-
-            {/* Centered single button below image */}
-            <div className="py-6 text-center w-full flex justify-center">
-                <a
-                    href="#featured"
-                    className="bg-[var(--ink)] text-[var(--champagne)] hover:bg-transparent hover:text-[var(--ink)] border border-[var(--champagne)] px-10 py-4 text-[10px] tracking-[0.3em] font-luxe uppercase transition-all duration-300 shadow-sm"
-                    data-testid="hero-cta-explore"
-                >
-                    Explore The Mirage Edit
-                </a>
-            </div>
         </section>
     );
 }
