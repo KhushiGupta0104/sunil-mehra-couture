@@ -1,0 +1,56 @@
+import React from "react";
+import designerImg from "@/assets/images/sunil_mehra.jpg";
+
+export default function Designer() {
+    return (
+        <section id="designer" className="bg-[var(--bone)] text-[var(--ink)] py-16 sm:py-20 lg:py-24 border-b border-[var(--hairline)]" data-testid="designer-section">
+            <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    
+                    {/* Visual Column */}
+                    <div className="lg:col-span-5 flex justify-center">
+                        <div className="relative w-full max-w-[500px] aspect-[1.2/1] overflow-hidden bg-[var(--cream)] border border-[var(--hairline)] shadow-sm">
+                            <img
+                                src={designerImg}
+                                alt="Sunil Mehra — The Designer"
+                                className="w-full h-full object-cover object-center transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03]"
+                            />
+                            <div className="absolute inset-0 bg-black/5 pointer-events-none" />
+                            <div className="grain" />
+                        </div>
+                    </div>
+
+                    {/* Text Column */}
+                    <div className="lg:col-span-7 flex flex-col justify-center">
+                        <span className="eyebrow block mb-3">Maison — The Designer</span>
+                        <h2 className="h-display text-4xl sm:text-5xl lg:text-6xl font-light mb-2">
+                            Sunil Mehra
+                        </h2>
+                        <h3 className="font-italic-serif text-xl sm:text-2xl text-[var(--bronze)] mb-8">
+                            Where Couture Meets Divinity
+                        </h3>
+
+                        <div className="space-y-6 text-sm text-[var(--ink-soft)] leading-relaxed max-w-2xl font-light">
+                            <p>
+                                For over four decades, the Mehra family has been synonymous with timeless Indian couture. Building upon the celebrated legacy of Study by Janak, Sunil Mehra established his bespoke menswear atelier in New Delhi with a singular vision: to create garments that embody elegance, individuality, and meaning.
+                            </p>
+                            <p>
+                                What distinguishes the House of Sunil Mehra is a philosophy rooted in devotion and craftsmanship. Inspired by the eternal love and harmony of Lord Krishna and Goddess Radha, every creation is designed with intention, balancing tradition with contemporary refinement.
+                            </p>
+                            <p>
+                                From meticulously tailored bandhgalas and regal sherwanis to elevated occasion wear and refined accessories, each piece is crafted using exceptional fabrics sourced from around the world. Every garment reflects a commitment to quality, precision, and personal expression.
+                            </p>
+                            <p>
+                                Today, alongside Karan Mehra, the next generation of the brand, Sunil Mehra continues to evolve this legacy for the modern gentleman while preserving the values that have defined it for decades.
+                            </p>
+                            <p className="font-italic-serif text-base text-[var(--ink)] pt-4 border-t border-[var(--hairline)]">
+                                More than a couture house, Sunil Mehra is a celebration of artistry, heritage, and individuality, where every thread tells a story.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    );
+}

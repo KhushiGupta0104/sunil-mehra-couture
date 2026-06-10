@@ -84,9 +84,6 @@ export default function Gallery() {
                             Spotted In <span className="font-italic-serif">Sunil Mehra</span>
                         </h2>
                     </div>
-                    <p className="text-[var(--muted)] font-italic-serif text-lg max-w-sm">
-                        Celebrity placements and editorial features captured from our official Instagram updates.
-                    </p>
                 </div>
 
                 {/* Grid */}

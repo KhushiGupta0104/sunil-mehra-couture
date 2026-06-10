@@ -8,6 +8,7 @@ import Wardrobe from "@/components/Wardrobe";
 import Atelier from "@/components/Atelier";
 import Featured from "@/components/Featured";
 import Gallery from "@/components/Gallery";
+import Designer from "@/components/Designer";
 import Manifesto from "@/components/Manifesto";
 import Editorial from "@/components/Editorial";
 import Salons from "@/components/Salons";
@@ -30,6 +31,7 @@ const Home = () => {
                 <Atelier />
                 <Featured />
                 <Gallery />
+                <Designer />
                 <Manifesto />
                 <Editorial />
                 <Salons />

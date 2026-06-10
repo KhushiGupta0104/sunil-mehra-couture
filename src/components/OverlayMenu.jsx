@@ -7,6 +7,7 @@ const MENU = [
     { label: "The Wardrobe", hover: "six chapters", href: "#wardrobe" },
     { label: "Featured", hover: "new in", href: "#featured" },
     { label: "Gallery", hover: "celebrity style", href: "#gallery" },
+    { label: "The Designer", hover: "about sunil mehra", href: "#designer" },
     { label: "Lookbook", hover: "stories in cloth", href: "#editorial" },
     { label: "Salons", hover: "by invitation", href: "#salons" },
     { label: "Appointment", hover: "private fitting", href: "#request-form" },
