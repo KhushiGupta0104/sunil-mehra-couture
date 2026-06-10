@@ -1,61 +1,57 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import img1 from "@/assets/images/Sunil Mehra  0019.jpg";
-import img2 from "@/assets/images/Sunil Mehra  0246.jpg";
-import img3 from "@/assets/images/Sunil Mehra  0493.jpg";
-import img4 from "@/assets/images/Sunil Mehra  0553.jpg";
-import img5 from "@/assets/images/Sunil Mehra  0966.jpg";
-import img6 from "@/assets/images/Sunil Mehra_0039.jpg";
+import faisalImg from "@/assets/images/faisal_sheikh.png";
+import shaanImg from "@/assets/images/shaan_mukherji.png";
+import shantanuImg from "@/assets/images/shantanu_maheshwari.png";
+import ammyImg from "@/assets/images/ammy_virk.png";
+import shreyasImg from "@/assets/images/shreyas_talpade.png";
 
 const CELEBRITIES = [
     {
         id: 1,
-        src: img1,
-        celebrity: "Ranbir Kapoor",
-        caption: "Spotted in Custom Hand-Embroidered Bandhgala",
-        occasion: "Festive Gala, Mumbai",
-        instagramUrl: "https://instagram.com/sunilmehraart",
+        src: faisalImg,
+        celebrity: "Faisal Sheikh",
+        tag: "@mr_faisu_07",
+        caption: "Spotted in custom Sunil Mehra cream pinstriped double-breasted suit with a striking fuchsia silk shirt.",
+        occasion: "Influencer & Actor",
+        instagramUrl: "https://www.instagram.com/mr_faisu_07/",
     },
     {
         id: 2,
-        src: img2,
-        celebrity: "Vicky Kaushal",
-        caption: "Exuding heritage charm in the Ivory Silk Sherwani",
-        occasion: "Promotional Event",
-        instagramUrl: "https://instagram.com/sunilmehraart",
+        src: shaanImg,
+        celebrity: "Shaan Mukherji",
+        tag: "@shaanmusic",
+        caption: "Exuding classic charm in a bespoke pastel pink embroidered suit paired with a crisp white tee.",
+        occasion: "Singer & Composer",
+        instagramUrl: "https://www.instagram.com/shaanmusic/",
     },
     {
         id: 3,
-        src: img3,
-        celebrity: "Ayushmann Khurrana",
-        caption: "Styled in the Signature Pastel Kurta Set & Drape Stole",
-        occasion: "Filmfare Pre-Gala",
-        instagramUrl: "https://instagram.com/sunilmehraart",
+        src: shantanuImg,
+        celebrity: "Shantanu Maheshwari",
+        tag: "@shantanu.maheshwari",
+        caption: "Stylishly relaxed in a custom lavender suit set paired with signature high-top sneakers.",
+        occasion: "Actor & Dancer",
+        instagramUrl: "https://www.instagram.com/shantanu.maheshwari/",
     },
     {
         id: 4,
-        src: img4,
-        celebrity: "Kartik Aaryan",
-        caption: "Seen in the Premium Handcrafted Emerald Nehru Jacket",
-        occasion: "Deepavali Celebration",
-        instagramUrl: "https://instagram.com/sunilmehraart",
+        src: ammyImg,
+        celebrity: "Ammy Virk",
+        tag: "@ammyvirk",
+        caption: "Looking sharp in a custom snakeskin textured blazer with contrast black lapels and a matching magenta turban.",
+        occasion: "Singer & Actor",
+        instagramUrl: "https://www.instagram.com/ammyvirk/",
     },
     {
         id: 5,
-        src: img5,
-        celebrity: "Ranveer Singh",
-        caption: "Making a statement in the Raw Silk Hand-Cut Kurta",
-        occasion: "Red Carpet, Delhi",
-        instagramUrl: "https://instagram.com/sunilmehraart",
-    },
-    {
-        id: 6,
-        src: img6,
-        celebrity: "Rajkummar Rao",
-        caption: "Styled in the Atelier Contemporary Asymmetric Jacket",
-        occasion: "Special Screening",
-        instagramUrl: "https://instagram.com/sunilmehraart",
+        src: shreyasImg,
+        celebrity: "Shreyas Talpade",
+        tag: "@shreyastalpade27",
+        caption: "Seated in a custom black bandhgala suit embellished with delicate, colorful floral motifs.",
+        occasion: "Actor & Filmmaker",
+        instagramUrl: "https://www.instagram.com/shreyastalpade27/",
     },
 ];
 
@@ -126,7 +122,7 @@ export default function Gallery() {
                                 </div>
 
                                 <span className="absolute top-4 left-4 bg-[var(--ink)] text-[var(--champagne)] font-luxe text-[8px] uppercase tracking-[0.2em] px-3 py-1.5 shadow-sm">
-                                    @{celeb.celebrity.toLowerCase().replace(/\s+/g, "")}
+                                    {celeb.tag}
                                 </span>
                             </div>
                             
@@ -217,7 +213,7 @@ export default function Gallery() {
                             <span className="font-luxe text-[9px] uppercase tracking-[0.2em] text-[var(--champagne)]">
                                 {selectedCeleb.celebrity} — {selectedCeleb.occasion}
                             </span>
-                            <p className="font-display text-white text-lg sm:text-xl lg:text-2xl mt-3">
+                            <p className="font-display text-white text-lg sm:text-xl lg:text-2xl mt-3 px-4">
                                 {selectedCeleb.caption}
                             </p>
                             
