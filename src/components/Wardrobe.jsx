@@ -8,7 +8,7 @@ import img9371 from "@/assets/images/IMG9371 copy.jpg";
 import img0246 from "@/assets/images/Sunil Mehra  0246.jpg";
 import img8657 from "@/assets/images/IMG8657 copy.jpg";
 
-const CATS = [
+const CATS_1 = [
     {
         no: "01",
         edit: "The Heirloom Edit",
@@ -27,6 +27,9 @@ const CATS = [
         name: "Kurta Sets",
         img: img0904,
     },
+];
+
+const CATS_2 = [
     {
         no: "04",
         edit: "Modern Maharaja",
@@ -49,58 +52,112 @@ const CATS = [
 
 export default function Wardrobe() {
     return (
-        <section
-            id="wardrobe"
-            className="bg-[var(--bone)] pt-6 sm:pt-8 lg:pt-10 pb-2 sm:pb-4 lg:pb-6 px-6 sm:px-12 lg:px-20"
-            data-testid="wardrobe-section"
-        >
-            <div className="max-w-[1300px] mx-auto">
-                <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-4 sm:mb-5">
-                    <div>
-                        <p className="eyebrow mb-2">The Wardrobe</p>
-                        <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[3.8vw] leading-[1.15] max-w-[900px]">
-                            Cut for the modern{" "}
-                            <span className="font-italic-serif italic">maharaja.</span>
-                        </h2>
+        <>
+            {/* FRAME 1: Heading + Categories 01-03 */}
+            <section
+                id="wardrobe"
+                className="relative bg-[var(--bone)] text-[var(--ink)] h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5"
+                data-testid="wardrobe-section"
+            >
+                <div className="max-w-[1500px] mx-auto w-full h-full flex flex-col justify-between">
+                    {/* Header Row */}
+                    <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-4 sm:mb-5 shrink-0">
+                        <div>
+                            <p className="eyebrow mb-2">The Wardrobe</p>
+                            <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[3.8vw] leading-[1.15] max-w-[900px]">
+                                Cut for the modern{" "}
+                                <span className="font-italic-serif italic">maharaja.</span>
+                            </h2>
+                        </div>
+                        <div className="lg:max-w-sm pb-1">
+                            <a href="#featured" className="hairline-link" data-testid="wardrobe-browse">
+                                Browse the Atelier <span aria-hidden>→</span>
+                            </a>
+                        </div>
                     </div>
-                    <div className="lg:max-w-sm pb-1">
-                        <a href="#featured" className="hairline-link" data-testid="wardrobe-browse">
-                            Browse the Atelier <span aria-hidden>→</span>
-                        </a>
-                    </div>
-                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {CATS.map((c) => (
-                        <a
-                            key={c.no}
-                            href="#featured"
-                            className="cat-card group block"
-                            data-testid={`wardrobe-card-${c.name.toLowerCase().replace(/\s+/g, "-")}`}
-                        >
-                            <div className="relative aspect-[3/4] overflow-hidden">
-                                <img
-                                    src={c.img}
-                                    alt={c.name}
-                                    className="w-full h-full object-cover object-top"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,18,14,0.45)] via-transparent to-transparent" />
-                                <span className="absolute top-5 right-5 font-display text-2xl text-[var(--bone)] opacity-90">
-                                    {c.no}
-                                </span>
-                                <div className="absolute bottom-6 left-6 right-6 text-[var(--bone)]">
-                                    <p className="font-italic-serif text-lg opacity-90">
-                                        {c.edit}
-                                    </p>
-                                    <p className="h-display text-3xl sm:text-4xl mt-1">
-                                        {c.name}
-                                    </p>
+                    {/* Grid Row 1 (Flex-1 to take up remaining height) */}
+                    <div className="flex-1 min-h-0 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-5">
+                        {CATS_1.map((c) => (
+                            <a
+                                key={c.no}
+                                href="#featured"
+                                className="cat-card group block w-full h-full relative"
+                                data-testid={`wardrobe-card-${c.name.toLowerCase().replace(/\s+/g, "-")}`}
+                            >
+                                <div className="relative w-full h-full overflow-hidden">
+                                    <img
+                                        src={c.img}
+                                        alt={c.name}
+                                        className="w-full h-full object-cover object-top"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,18,14,0.45)] via-transparent to-transparent" />
+                                    <span className="absolute top-5 right-5 font-display text-2xl text-[var(--bone)] opacity-90">
+                                        {c.no}
+                                    </span>
+                                    <div className="absolute bottom-6 left-6 right-6 text-[var(--bone)]">
+                                        <p className="font-italic-serif text-lg opacity-90">
+                                            {c.edit}
+                                        </p>
+                                        <p className="h-display text-3xl sm:text-4xl mt-1">
+                                            {c.name}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    ))}
+                            </a>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            {/* FRAME 2: Chapter II Eyebrow + Categories 04-06 */}
+            <section
+                id="wardrobe-part2"
+                className="relative bg-[var(--bone)] text-[var(--ink)] h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5"
+                data-testid="wardrobe-section-2"
+            >
+                <div className="max-w-[1500px] mx-auto w-full h-full flex flex-col justify-between">
+                    {/* Header Row */}
+                    <div className="flex items-center justify-between mb-4 sm:mb-5 shrink-0">
+                        <p className="eyebrow">The Wardrobe — Chapter II</p>
+                        <span className="text-[10px] tracking-[0.2em] font-luxe opacity-60 uppercase">
+                            silhouettes 04–06
+                        </span>
+                    </div>
+
+                    {/* Grid Row 2 (Flex-1 to take up remaining height) */}
+                    <div className="flex-1 min-h-0 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-5">
+                        {CATS_2.map((c) => (
+                            <a
+                                key={c.no}
+                                href="#featured"
+                                className="cat-card group block w-full h-full relative"
+                                data-testid={`wardrobe-card-${c.name.toLowerCase().replace(/\s+/g, "-")}`}
+                            >
+                                <div className="relative w-full h-full overflow-hidden">
+                                    <img
+                                        src={c.img}
+                                        alt={c.name}
+                                        className="w-full h-full object-cover object-top"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,18,14,0.45)] via-transparent to-transparent" />
+                                    <span className="absolute top-5 right-5 font-display text-2xl text-[var(--bone)] opacity-90">
+                                        {c.no}
+                                    </span>
+                                    <div className="absolute bottom-6 left-6 right-6 text-[var(--bone)]">
+                                        <p className="font-italic-serif text-lg opacity-90">
+                                            {c.edit}
+                                        </p>
+                                        <p className="h-display text-3xl sm:text-4xl mt-1">
+                                            {c.name}
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </>
     );
 }
