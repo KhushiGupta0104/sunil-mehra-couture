@@ -55,21 +55,15 @@ export default function Wardrobe() {
             data-testid="wardrobe-section"
         >
             <div className="max-w-[1300px] mx-auto">
-                {/* heading row */}
-                <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-5 sm:mb-6">
+                <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-4 sm:mb-5">
                     <div>
-                        <p className="eyebrow mb-6">The Wardrobe</p>
-                        <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[4.4vw] leading-[1.15] max-w-[900px]">
+                        <p className="eyebrow mb-2">The Wardrobe</p>
+                        <h2 className="h-display text-[8vw] sm:text-[6vw] lg:text-[3.8vw] leading-[1.15] max-w-[900px]">
                             Cut for the modern{" "}
                             <span className="font-italic-serif italic">maharaja.</span>
                         </h2>
                     </div>
-                    <div className="lg:max-w-sm">
-                        <p className="text-[var(--ink-soft)] leading-relaxed mb-6">
-                            Six chapters of menswear from the atelier. Each piece is
-                            hand-finished by a single karigar — measured not in
-                            minutes, but in months.
-                        </p>
+                    <div className="lg:max-w-sm pb-1">
                         <a href="#featured" className="hairline-link" data-testid="wardrobe-browse">
                             Browse the Atelier <span aria-hidden>→</span>
                         </a>
