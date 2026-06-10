@@ -35,7 +35,7 @@ body {
 
 section[id],
 div[id="request-form"] {
-    scroll-margin-top: 130px;
+    scroll-margin-top: 96px;
 }
 
 ::selection {

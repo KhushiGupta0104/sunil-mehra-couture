@@ -7,7 +7,7 @@ export default function Navbar({ onMenuOpen, menuOpen }) {
             data-testid="site-navbar"
         >
             {/* Top Tier: Currency, Brand Name, Search & Bag */}
-            <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14 py-4 sm:py-5 flex items-center justify-between w-full">
+            <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14 py-2.5 sm:py-3.5 flex items-center justify-between w-full">
                 {/* Left — Currency selector */}
                 <div className="flex items-center w-1/3">
                     <span className="text-[10px] tracking-[0.25em] font-luxe opacity-75 cursor-pointer hover:opacity-100 transition flex items-center gap-1">
@@ -20,7 +20,7 @@ export default function Navbar({ onMenuOpen, menuOpen }) {
                     <p className="font-display text-[clamp(18px,2.2vw,26px)] leading-none tracking-[0.18em] text-[var(--ink)]">
                         SUNIL MEHRA
                     </p>
-                    <p className="font-italic-serif text-[10px] sm:text-[11px] opacity-80 mt-1.5 tracking-[0.2em] text-[var(--ink)]">
+                    <p className="font-italic-serif text-[10px] sm:text-[11px] opacity-80 mt-0.5 tracking-[0.2em] text-[var(--ink)]">
                         couture · est. 1984
                     </p>
                 </a>
@@ -45,7 +45,7 @@ export default function Navbar({ onMenuOpen, menuOpen }) {
 
             {/* Bottom Tier: Centered Symmetrical Navigation features */}
             <div className="border-t border-[var(--hairline)] w-full">
-                <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14 flex items-center justify-center gap-8 sm:gap-12 lg:gap-16 py-4 text-[10px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
+                <div className="max-w-[1500px] mx-auto px-6 sm:px-10 lg:px-14 flex items-center justify-center gap-8 sm:gap-12 lg:gap-16 py-2.5 text-[10px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
                     {/* Index trigger */}
                     <button
                         onClick={onMenuOpen}
