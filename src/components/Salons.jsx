@@ -1,6 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Salons() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [submittedEmail, setSubmittedEmail] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState(null); // 'success' | 'error' | null
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setStatus(null);
+        setErrorMessage("");
+
+        try {
+            const response = await fetch("/api/appointments", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ name, email, message }),
+            });
+
+            const data = await response.json();
+            if (response.ok && data.success) {
+                setSubmittedEmail(email);
+                setStatus("success");
+                setName("");
+                setEmail("");
+                setMessage("");
+            } else {
+                setStatus("error");
+                setErrorMessage(data.error || "Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            setStatus("error");
+            setErrorMessage("Failed to connect to the server. Please check your network connection.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
     return (
         <>
             {/* FRAME 1: The Salons (Delhi Flagship card) */}
@@ -82,50 +124,121 @@ export default function Salons() {
                             </div>
                         </div>
 
-                        <div>
-                            <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <div className="flex flex-col">
-                                        <label className="font-luxe text-[10px] uppercase tracking-wider mb-2 text-[var(--muted)]">
-                                            Name
-                                        </label>
-                                        <input 
-                                            type="text" 
-                                            className="bg-transparent border-b border-[var(--hairline-strong)] py-2 focus:border-[var(--ink)] outline-none font-body text-sm" 
-                                            placeholder="Your Name" 
-                                            required 
-                                        />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <label className="font-luxe text-[10px] uppercase tracking-wider mb-2 text-[var(--muted)]">
-                                            Email
-                                        </label>
-                                        <input 
-                                            type="email" 
-                                            className="bg-transparent border-b border-[var(--hairline-strong)] py-2 focus:border-[var(--ink)] outline-none font-body text-sm" 
-                                            placeholder="Your Email" 
-                                            required 
-                                        />
-                                    </div>
-                                </div>
-                                <div className="flex flex-col">
-                                    <label className="font-luxe text-[10px] uppercase tracking-wider mb-2 text-[var(--muted)]">
-                                        Message / Preferred Fitting Time
-                                    </label>
-                                    <textarea 
-                                        rows="3" 
-                                        className="bg-transparent border-b border-[var(--hairline-strong)] py-2 focus:border-[var(--ink)] outline-none font-body text-sm resize-none" 
-                                        placeholder="Let us know your preferred date and time for the fitting..." 
-                                        required
-                                    ></textarea>
-                                </div>
-                                <button 
-                                    type="submit" 
-                                    className="bg-[var(--bronze)] text-[var(--bone)] hover:bg-[var(--ink)] hover:text-white px-8 py-3.5 text-[10px] tracking-[0.3em] font-luxe uppercase transition-all duration-300 self-start"
-                                >
-                                    Submit Request
-                                </button>
-                            </form>
+                        <div className="relative min-h-[350px] flex flex-col justify-center">
+                            <AnimatePresence mode="wait">
+                                {status === "success" ? (
+                                    <motion.div
+                                        key="success"
+                                        initial={{ opacity: 0, y: 15 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -15 }}
+                                        transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+                                        className="border border-[var(--bronze)] bg-[var(--bone)] p-8 sm:p-10 flex flex-col items-start rounded-sm w-full"
+                                    >
+                                        <div className="w-12 h-12 rounded-full border border-[var(--bronze)] flex items-center justify-center mb-6">
+                                            <svg className="w-5 h-5 text-[var(--bronze)]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                            </svg>
+                                        </div>
+                                        <span className="font-luxe text-[10px] uppercase tracking-[0.25em] text-[var(--bronze)] mb-2">
+                                            Request Received
+                                        </span>
+                                        <p className="font-display text-2xl text-[var(--ink)] mb-4">
+                                            Thank you.
+                                        </p>
+                                        <p className="text-xs sm:text-sm text-[var(--ink-soft)] font-body leading-relaxed mb-6">
+                                            Our atelier concierge has received your request. We will contact you at <span className="underline">{submittedEmail}</span> within 24 hours to coordinate your fitting.
+                                        </p>
+                                        <button
+                                            onClick={() => setStatus(null)}
+                                            className="text-[10px] uppercase tracking-[0.3em] font-luxe text-[var(--muted)] hover:text-[var(--ink)] transition border-b border-[var(--hairline-strong)] pb-1"
+                                        >
+                                            Submit Another Request
+                                        </button>
+                                    </motion.div>
+                                ) : (
+                                    <motion.div
+                                        key="form"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="w-full"
+                                    >
+                                        <form onSubmit={handleSubmit} className="space-y-4">
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                                <div className="flex flex-col">
+                                                    <label className="font-luxe text-[10px] uppercase tracking-wider mb-2 text-[var(--muted)]">
+                                                        Name
+                                                    </label>
+                                                    <input 
+                                                        type="text" 
+                                                        value={name}
+                                                        onChange={(e) => setName(e.target.value)}
+                                                        className="bg-transparent border-b border-[var(--hairline-strong)] py-2 focus:border-[var(--ink)] outline-none font-body text-sm text-[var(--ink)]" 
+                                                        placeholder="Your Name" 
+                                                        required 
+                                                        disabled={isSubmitting}
+                                                    />
+                                                </div>
+                                                <div className="flex flex-col">
+                                                    <label className="font-luxe text-[10px] uppercase tracking-wider mb-2 text-[var(--muted)]">
+                                                        Email
+                                                    </label>
+                                                    <input 
+                                                        type="email" 
+                                                        value={email}
+                                                        onChange={(e) => setEmail(e.target.value)}
+                                                        className="bg-transparent border-b border-[var(--hairline-strong)] py-2 focus:border-[var(--ink)] outline-none font-body text-sm text-[var(--ink)]" 
+                                                        placeholder="Your Email" 
+                                                        required 
+                                                        disabled={isSubmitting}
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-col">
+                                                <label className="font-luxe text-[10px] uppercase tracking-wider mb-2 text-[var(--muted)]">
+                                                    Message / Preferred Fitting Time
+                                                </label>
+                                                <textarea 
+                                                    rows="3" 
+                                                    value={message}
+                                                    onChange={(e) => setMessage(e.target.value)}
+                                                    className="bg-transparent border-b border-[var(--hairline-strong)] py-2 focus:border-[var(--ink)] outline-none font-body text-sm resize-none text-[var(--ink)]" 
+                                                    placeholder="Let us know your preferred date and time for the fitting..." 
+                                                    required
+                                                    disabled={isSubmitting}
+                                                ></textarea>
+                                            </div>
+                                            
+                                            {status === "error" && (
+                                                <motion.div 
+                                                    initial={{ opacity: 0, height: 0 }}
+                                                    animate={{ opacity: 1, height: "auto" }}
+                                                    className="text-xs text-red-600 bg-red-50 border border-red-200 p-3 rounded-sm font-body animate-pulse"
+                                                >
+                                                    {errorMessage}
+                                                </motion.div>
+                                            )}
+
+                                            <button 
+                                                type="submit" 
+                                                disabled={isSubmitting}
+                                                className="bg-[var(--bronze)] text-[var(--bone)] hover:bg-[var(--ink)] hover:text-white disabled:bg-[var(--muted)] disabled:cursor-not-allowed px-8 py-3.5 text-[10px] tracking-[0.3em] font-luxe uppercase transition-all duration-300 flex items-center justify-center gap-2"
+                                            >
+                                                {isSubmitting ? (
+                                                    <>
+                                                        <span className="animate-spin rounded-full h-3 w-3 border-b-2 border-[var(--bone)]"></span>
+                                                        Sending...
+                                                    </>
+                                                ) : (
+                                                    "Submit Request"
+                                                )}
+                                            </button>
+                                        </form>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Import local image
 import img6602 from "@/assets/images/Sunil Mehra_6602.jpg";
@@ -55,20 +56,20 @@ export default function Atelier() {
                         </p>
 
                         <div className="flex flex-wrap items-center gap-8">
-                            <a
-                                href="#request-form"
+                            <Link
+                                to="/#request-form"
                                 className="hairline-link"
                                 data-testid="atelier-book"
                             >
                                 Book Appointment <span aria-hidden>→</span>
-                            </a>
-                            <a
-                                href="#manifesto"
+                            </Link>
+                            <Link
+                                to="/#manifesto"
                                 className="text-[11px] uppercase tracking-[0.32em] font-luxe text-[var(--ink-soft)] hover:text-[var(--ink)] transition"
                                 data-testid="atelier-house"
                             >
                                 The House
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

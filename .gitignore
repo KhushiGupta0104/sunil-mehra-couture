@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# appointments spreadsheet
+appointments.csv
+
+# Large zip archives and raw photoshoot assets
+*.zip
+*Raw/
+.env

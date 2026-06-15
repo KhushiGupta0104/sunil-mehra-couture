@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Import local images
 import img3721 from "@/assets/images/Sunil Mehra_3721.jpg";
@@ -7,46 +8,59 @@ import img0904 from "@/assets/images/Sunil Mehra_0904.jpg";
 import img9371 from "@/assets/images/IMG9371 copy.jpg";
 import img0246 from "@/assets/images/Sunil Mehra  0246.jpg";
 import img8657 from "@/assets/images/IMG8657 copy.jpg";
+import jacketCover from "@/assets/images/Sunil Mehra_6586 - Copy.jpg";
+import winterCover from "@/assets/images/Sunil Mehra 0932.jpg";
+import accessoryCover from "@/assets/images/Accessories/Bags/Sunil Mehra_7074.jpg";
+
+// New covers from the uploaded zip files
+import bandhaglaCover from "@/assets/images/Bandhagla/sunil_mehra_0738.jpg";
+import kurtaCover from "@/assets/images/KurtaSets/sunil_mehra_0711.jpg";
 
 const CATS_1 = [
     {
         no: "01",
-        edit: "The Heirloom Edit",
-        name: "Sherwani",
-        img: img3721,
+        edit: "Tailored Royalty",
+        name: "Bandhagla Sets & Indo-western",
+        slug: "bandhagala-indo-western",
+        img: bandhaglaCover,
     },
     {
         no: "02",
-        edit: "Tailored Royalty",
-        name: "Bandhgala",
-        img: img0493,
+        edit: "Quiet Luxury",
+        name: "Kurta Sets",
+        slug: "kurta-sets",
+        img: kurtaCover,
     },
     {
         no: "03",
-        edit: "Quiet Luxury",
-        name: "Kurta Sets",
-        img: img0904,
+        edit: "Modern Maharaja",
+        name: "Jawahar Jacket Sets",
+        slug: "jawahar-jackets",
+        img: jacketCover,
     },
 ];
 
 const CATS_2 = [
     {
         no: "04",
-        edit: "Modern Maharaja",
-        name: "Indo-Western",
-        img: img9371,
+        edit: "Sharply Cut",
+        name: "Suits",
+        slug: "suits",
+        img: img8657,
     },
     {
         no: "05",
         edit: "Princely Silhouettes",
-        name: "Jodhpuri",
-        img: img0246,
+        name: "Winter Collection",
+        slug: "winter-collection",
+        img: winterCover,
     },
     {
         no: "06",
-        edit: "Sharply Cut",
-        name: "Suits",
-        img: img8657,
+        edit: "Finishing Details",
+        name: "Accessories",
+        slug: "accessories",
+        img: accessoryCover,
     },
 ];
 
@@ -70,20 +84,20 @@ export default function Wardrobe() {
                             </h2>
                         </div>
                         <div className="lg:max-w-sm pb-1">
-                            <a href="#featured" className="hairline-link" data-testid="wardrobe-browse">
+                            <Link to="/#featured" className="hairline-link" data-testid="wardrobe-browse">
                                 Browse the Atelier <span aria-hidden>→</span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
                     {/* Grid Row 1 (Flex-1 to take up remaining height) */}
                     <div className="flex-1 min-h-0 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-5">
                         {CATS_1.map((c) => (
-                            <a
+                            <Link
                                 key={c.no}
-                                href="#featured"
+                                to={`/wardrobe/${c.slug}`}
                                 className="cat-card group block w-full h-full relative"
-                                data-testid={`wardrobe-card-${c.name.toLowerCase().replace(/\s+/g, "-")}`}
+                                data-testid={`wardrobe-card-${c.slug}`}
                             >
                                 <div className="relative w-full h-full overflow-hidden">
                                     <img
@@ -104,7 +118,7 @@ export default function Wardrobe() {
                                         </p>
                                     </div>
                                 </div>
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -128,11 +142,11 @@ export default function Wardrobe() {
                     {/* Grid Row 2 (Flex-1 to take up remaining height) */}
                     <div className="flex-1 min-h-0 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-5">
                         {CATS_2.map((c) => (
-                            <a
+                            <Link
                                 key={c.no}
-                                href="#featured"
+                                to={`/wardrobe/${c.slug}`}
                                 className="cat-card group block w-full h-full relative"
-                                data-testid={`wardrobe-card-${c.name.toLowerCase().replace(/\s+/g, "-")}`}
+                                data-testid={`wardrobe-card-${c.slug}`}
                             >
                                 <div className="relative w-full h-full overflow-hidden">
                                     <img
@@ -153,7 +167,7 @@ export default function Wardrobe() {
                                         </p>
                                     </div>
                                 </div>
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </div>

@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import coverImg from "@/assets/images/cover.jpg";
 
+const MotionLink = motion(Link);
+
 const MENU = [
-    { label: "Couture", hover: "the atelier", href: "#wardrobe" },
-    { label: "The Wardrobe", hover: "six chapters", href: "#wardrobe" },
-    { label: "Featured", hover: "new in", href: "#featured" },
-    { label: "Gallery", hover: "celebrity style", href: "#gallery" },
-    { label: "The Designer", hover: "about sunil mehra", href: "#designer" },
-    { label: "Lookbook", hover: "stories in cloth", href: "#editorial" },
-    { label: "Salons", hover: "by invitation", href: "#salons" },
-    { label: "Appointment", hover: "private fitting", href: "#request-form" },
+    { label: "Couture", hover: "the atelier", to: "/atelier" },
+    { label: "The Wardrobe", hover: "six chapters", to: "/wardrobe" },
+    { label: "Featured", hover: "new in", to: "/#featured" },
+    { label: "Gallery", hover: "celebrity style", to: "/gallery" },
+    { label: "The Designer", hover: "about sunil mehra", to: "/#designer" },
+    { label: "Lookbook", hover: "stories in cloth", to: "/editorial" },
+    { label: "Salons", hover: "by invitation", to: "/#salons" },
+    { label: "Appointment", hover: "private fitting", to: "/#request-form" },
 ];
 
 const META = [
@@ -53,9 +56,9 @@ export default function OverlayMenu({ open, onClose }) {
 
                         <nav className="my-auto flex flex-col gap-1 sm:gap-2 py-6 shrink-0">
                             {MENU.map((m, i) => (
-                                <motion.a
+                                <MotionLink
                                     key={m.label}
-                                    href={m.href}
+                                    to={m.to}
                                     onClick={onClose}
                                     initial={{ opacity: 0, y: 30 }}
                                     animate={{ opacity: 1, y: 0 }}
@@ -69,7 +72,7 @@ export default function OverlayMenu({ open, onClose }) {
                                 >
                                     <span className="menu-text">{m.label}</span>
                                     <span className="menu-text-hover">— {m.hover}</span>
-                                </motion.a>
+                                </MotionLink>
                             ))}
                         </nav>
 
