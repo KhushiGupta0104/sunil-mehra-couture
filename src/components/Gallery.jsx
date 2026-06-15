@@ -103,6 +103,7 @@ export default function Gallery() {
                                 <img
                                     src={celeb.src}
                                     alt={`${celeb.celebrity} in Sunil Mehra`}
+                                    loading="lazy"
                                     className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                                 />
                                 

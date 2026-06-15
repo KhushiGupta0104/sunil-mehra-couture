@@ -103,8 +103,8 @@ export default function Featured() {
                             <div key={prod.id} className="w-full flex flex-col">
                                 <a href="#" className="block w-full flex flex-col group" data-testid={`product-${prod.id}`}>
                                     <div className="relative overflow-hidden border border-[var(--hairline)] aspect-[3/4] bg-[var(--cream)] shadow-sm">
-                                        <img src={prod.front} alt={prod.name} className="img-front absolute inset-0 w-full h-full object-cover object-top transition duration-700" />
-                                        <img src={prod.back} alt={prod.name} className="img-back absolute inset-0 w-full h-full object-cover object-top opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                        <img src={prod.front} alt={prod.name} loading="lazy" className="img-front absolute inset-0 w-full h-full object-cover object-top transition duration-700" />
+                                        <img src={prod.back} alt={prod.name} loading="lazy" className="img-back absolute inset-0 w-full h-full object-cover object-top opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                         {prod.tag && (
                                             <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
                                                 {prod.tag}
@@ -140,8 +140,8 @@ export default function Featured() {
                             <div key={prod.id} className="w-full flex flex-col">
                                 <a href="#" className="block w-full flex flex-col group" data-testid={`product-${prod.id}`}>
                                     <div className="relative overflow-hidden border border-[var(--hairline)] aspect-[3/4] bg-[var(--cream)] shadow-sm">
-                                        <img src={prod.front} alt={prod.name} className="img-front absolute inset-0 w-full h-full object-cover object-top transition duration-700" />
-                                        <img src={prod.back} alt={prod.name} className="img-back absolute inset-0 w-full h-full object-cover object-top opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                        <img src={prod.front} alt={prod.name} loading="lazy" className="img-front absolute inset-0 w-full h-full object-cover object-top transition duration-700" />
+                                        <img src={prod.back} alt={prod.name} loading="lazy" className="img-back absolute inset-0 w-full h-full object-cover object-top opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                         {prod.tag && (
                                             <span className="absolute top-5 left-5 z-10 px-3 py-1 bg-[var(--bone)] text-[9px] uppercase tracking-[0.3em] font-luxe text-[var(--ink)]">
                                                 {prod.tag}

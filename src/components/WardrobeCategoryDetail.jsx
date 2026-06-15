@@ -376,6 +376,7 @@ export default function WardrobeCategoryDetail() {
                                     <img 
                                         src={subcat.img} 
                                         alt={subcat.name} 
+                                        loading="lazy"
                                         className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                                     />
                                     <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -470,6 +471,7 @@ export default function WardrobeCategoryDetail() {
                                 <img 
                                     src={piece.img} 
                                     alt={piece.name} 
+                                    loading="lazy"
                                     className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                                 />
                                 <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

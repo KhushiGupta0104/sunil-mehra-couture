@@ -10,6 +10,7 @@ export default function Hero() {
                 <img
                     src={coverImg}
                     alt="Atelier — Sunil Mehra"
+                    fetchpriority="high"
                     className="absolute inset-0 w-full h-full object-cover"
                     style={{ objectPosition: "center bottom" }}
                 />

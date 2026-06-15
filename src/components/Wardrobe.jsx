@@ -103,6 +103,7 @@ export default function Wardrobe() {
                                     <img
                                         src={c.img}
                                         alt={c.name}
+                                        loading="lazy"
                                         className="w-full h-full object-cover object-top"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,18,14,0.45)] via-transparent to-transparent" />
@@ -152,6 +153,7 @@ export default function Wardrobe() {
                                     <img
                                         src={c.img}
                                         alt={c.name}
+                                        loading="lazy"
                                         className="w-full h-full object-cover object-top"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[rgba(20,18,14,0.45)] via-transparent to-transparent" />

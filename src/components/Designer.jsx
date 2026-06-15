@@ -17,6 +17,7 @@ export default function Designer() {
                             <img
                                 src={designerImg}
                                 alt="Sunil Mehra — The Designer"
+                                loading="lazy"
                                 className="w-full h-full object-cover object-top transition-transform duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03]"
                             />
                             <div className="absolute inset-0 bg-black/5 pointer-events-none" />

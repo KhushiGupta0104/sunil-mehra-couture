@@ -271,7 +271,7 @@ export default function SearchOverlay({ open, onClose }) {
                                                 className="flex items-center gap-4 p-3 border border-white/5 hover:border-white/25 bg-white/5 hover:bg-white/10 transition group"
                                             >
                                                 <div className="w-16 aspect-[3/4] bg-white/10 overflow-hidden border border-white/10 shrink-0">
-                                                    <img src={item.img} alt={item.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
+                                                    <img src={item.img} alt={item.name} loading="lazy" className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
                                                 </div>
                                                 <div>
                                                     <h4 className="font-display text-lg text-white group-hover:text-[var(--champagne)] transition">{item.name}</h4>
@@ -299,7 +299,7 @@ export default function SearchOverlay({ open, onClose }) {
                                                 className="flex items-center gap-4 p-3 border border-white/5 hover:border-white/25 bg-white/5 hover:bg-white/10 transition group"
                                             >
                                                 <div className="w-16 aspect-[3/4] bg-white/10 overflow-hidden border border-white/10 shrink-0">
-                                                    <img src={item.img} alt={item.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
+                                                    <img src={item.img} alt={item.name} loading="lazy" className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
                                                 </div>
                                                 <div>
                                                     <h4 className="font-display text-lg text-white group-hover:text-[var(--champagne)] transition">{item.name}</h4>

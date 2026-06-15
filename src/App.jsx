@@ -1,20 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import "@/index.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import OverlayMenu from "@/components/OverlayMenu";
 import Hero from "@/components/Hero";
-import Wardrobe from "@/components/Wardrobe";
-import Atelier from "@/components/Atelier";
 import Featured from "@/components/Featured";
-import Gallery from "@/components/Gallery";
 import Designer from "@/components/Designer";
 import Manifesto from "@/components/Manifesto";
-import Editorial from "@/components/Editorial";
 import Salons from "@/components/Salons";
 import Footer from "@/components/Footer";
-import WardrobeCategoryDetail from "@/components/WardrobeCategoryDetail";
 import SearchOverlay from "@/components/SearchOverlay";
+
+// Lazy-loaded pages
+const Wardrobe = lazy(() => import("@/components/Wardrobe"));
+const Atelier = lazy(() => import("@/components/Atelier"));
+const Gallery = lazy(() => import("@/components/Gallery"));
+const Editorial = lazy(() => import("@/components/Editorial"));
+const WardrobeCategoryDetail = lazy(() => import("@/components/WardrobeCategoryDetail"));
+
+// Quiet luxury loader fallback
+const PageLoader = () => (
+    <div className="min-h-screen bg-[var(--bone)] flex items-center justify-center">
+        <div className="font-luxe text-[10px] uppercase tracking-[0.4em] text-[var(--ink-soft)] animate-pulse">
+            Sunil Mehra
+        </div>
+    </div>
+);
+
 
 function ScrollToHash() {
     const { pathname, hash } = useLocation();
@@ -108,15 +120,17 @@ function App() {
     return (
         <BrowserRouter>
             <ScrollToHash />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/wardrobe" element={<WardrobePage />} />
-                <Route path="/wardrobe/:categorySlug" element={<PageLayout><WardrobeCategoryDetail /></PageLayout>} />
-                <Route path="/wardrobe/:categorySlug/:subCategorySlug" element={<PageLayout><WardrobeCategoryDetail /></PageLayout>} />
-                <Route path="/atelier" element={<AtelierPage />} />
-                <Route path="/gallery" element={<GalleryPage />} />
-                <Route path="/editorial" element={<EditorialPage />} />
-            </Routes>
+            <Suspense fallback={<PageLoader />}>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/wardrobe" element={<WardrobePage />} />
+                    <Route path="/wardrobe/:categorySlug" element={<PageLayout><WardrobeCategoryDetail /></PageLayout>} />
+                    <Route path="/wardrobe/:categorySlug/:subCategorySlug" element={<PageLayout><WardrobeCategoryDetail /></PageLayout>} />
+                    <Route path="/atelier" element={<AtelierPage />} />
+                    <Route path="/gallery" element={<GalleryPage />} />
+                    <Route path="/editorial" element={<EditorialPage />} />
+                </Routes>
+            </Suspense>
         </BrowserRouter>
     );
 }

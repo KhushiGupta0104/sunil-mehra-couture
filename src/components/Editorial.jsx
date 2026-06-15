@@ -61,6 +61,7 @@ export default function Editorial() {
                                 <img
                                     src={s.img}
                                     alt={s.name}
+                                    loading="lazy"
                                     className="w-full h-full object-cover object-top"
                                 />
                                 <span className="absolute top-5 left-5 font-display text-3xl text-[var(--bone)]">
