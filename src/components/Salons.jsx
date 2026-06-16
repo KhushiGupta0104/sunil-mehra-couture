@@ -48,10 +48,10 @@ export default function Salons() {
             {/* FRAME 1: The Salons (Delhi Flagship card) */}
             <section
                 id="salons"
-                className="relative bg-[var(--cream)] h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5 border-b border-[var(--hairline)]"
+                className="relative bg-[var(--cream)] min-h-screen lg:h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-12 px-6 sm:px-10 lg:pb-5 lg:px-14 border-b border-[var(--hairline)] py-8 lg:py-0"
                 data-testid="salons-section"
             >
-                <div className="max-w-[1150px] mx-auto w-full h-full flex flex-col justify-center">
+                <div className="max-w-[1150px] mx-auto w-full flex-1 flex flex-col justify-center py-6 lg:py-0">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                         <div>
                             <p className="eyebrow mb-5">The Salons</p>
@@ -100,10 +100,10 @@ export default function Salons() {
             {/* FRAME 2: Request Form (Private Fitting) */}
             <section
                 id="request-form"
-                className="relative bg-[var(--bone)] h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5 border-t border-[var(--hairline)]"
+                className="relative bg-[var(--bone)] min-h-screen lg:h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-12 px-6 sm:px-10 lg:pb-5 lg:px-14 border-t border-[var(--hairline)] py-8 lg:py-0"
                 data-testid="request-form-section"
             >
-                <div className="max-w-[1150px] mx-auto w-full h-full flex flex-col justify-center">
+                <div className="max-w-[1150px] mx-auto w-full flex-1 flex flex-col justify-center py-6 lg:py-0">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                         <div>
                             <p className="eyebrow mb-5">Private Fitting</p>

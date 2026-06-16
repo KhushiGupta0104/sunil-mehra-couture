@@ -9,11 +9,11 @@ import ivory2_back from "@/assets/images/KurtaSets/sunil_mehra_1217.jpg";
 import ivory3_front from "@/assets/images/KurtaSets/sunil_mehra_1318.jpg";
 import ivory3_back from "@/assets/images/KurtaSets/sunil_mehra_1338.jpg";
 
-// Ochre & Indigo Chapters (Brown/Orange/Blue)
-import ochre1_front from "@/assets/images/Bandhagla/sunil_mehra_0738.jpg";
-import ochre1_back from "@/assets/images/Bandhagla/sunil_mehra_1043.jpg";
-import ochre2_front from "@/assets/images/KurtaSets/sunil_mehra_0711.jpg";
-import ochre2_back from "@/assets/images/KurtaSets/sunil_mehra_0725.jpg";
+// Slate & Indigo Chapters (Neutral & Blue)
+import slate_front from "@/assets/images/IMG8912 copy.jpg";
+import slate_back from "@/assets/images/IMG9115 copy.jpg";
+import ash_front from "@/assets/images/KurtaSets/sunil_mehra_8328.jpg";
+import ash_back from "@/assets/images/KurtaSets/sunil_mehra_8350.jpg";
 import indigo_front from "@/assets/images/Bandhagla/img9367_copy.jpg";
 import indigo_back from "@/assets/images/Bandhagla/img9702_copy.jpg";
 
@@ -47,19 +47,19 @@ const IVORY_PRODUCTS = [
 const COLORED_PRODUCTS = [
     {
         id: "p4",
-        name: "Dune Bandhgala",
-        price: "₹1,89,000",
+        name: "Slate Blue Tailored Suit",
+        price: "₹1,85,000",
         tag: "New",
-        front: ochre1_front,
-        back: ochre1_back,
+        front: slate_front,
+        back: slate_back,
     },
     {
         id: "p5",
-        name: "Sand Linen Jodhpuri",
-        price: "₹1,72,000",
+        name: "Ash Grey Silk Kurta Set",
+        price: "₹1,15,000",
         tag: null,
-        front: ochre2_front,
-        back: ochre2_back,
+        front: ash_front,
+        back: ash_back,
     },
     {
         id: "p6",
@@ -130,7 +130,7 @@ export default function Featured() {
                 <div className="space-y-4">
                     <div>
                         <h3 className="font-display text-xl sm:text-2xl text-[var(--ink)]">
-                            The Ochre & Indigo Chapters
+                            The Slate & Indigo Chapters
                         </h3>
                     </div>
 

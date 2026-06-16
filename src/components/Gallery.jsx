@@ -75,10 +75,10 @@ export default function Gallery() {
     return (
         <section
             id="gallery"
-            className="relative bg-[var(--bone)] text-[var(--ink)] h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5 border-b border-[var(--hairline)]"
+            className="relative bg-[var(--bone)] text-[var(--ink)] min-h-screen lg:h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-12 px-6 sm:px-10 lg:pb-5 lg:px-14 border-b border-[var(--hairline)] py-8 lg:py-0"
             data-testid="gallery-section"
         >
-            <div className="max-w-[1500px] mx-auto w-full h-full flex flex-col justify-between">
+            <div className="max-w-[1500px] mx-auto w-full flex-1 flex flex-col justify-between py-6 lg:py-0">
                 
                 {/* Header */}
                 <div className="mb-4 sm:mb-5 flex flex-col md:flex-row md:items-end justify-between gap-6 shrink-0">
@@ -99,7 +99,7 @@ export default function Gallery() {
                             onClick={() => setSelectedCeleb(celeb)}
                         >
                             {/* Image Box */}
-                            <div className="relative flex-1 min-h-0 overflow-hidden bg-[var(--cream)] border border-[var(--hairline)]">
+                             <div className="relative aspect-[3/4] sm:aspect-auto sm:flex-1 sm:min-h-0 overflow-hidden bg-[var(--cream)] border border-[var(--hairline)]">
                                 <img
                                     src={celeb.src}
                                     alt={`${celeb.celebrity} in Sunil Mehra`}

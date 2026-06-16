@@ -70,10 +70,10 @@ export default function Wardrobe() {
             {/* FRAME 1: Heading + Categories 01-03 */}
             <section
                 id="wardrobe"
-                className="relative bg-[var(--bone)] text-[var(--ink)] h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5"
+                className="relative bg-[var(--bone)] text-[var(--ink)] min-h-screen lg:h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-12 px-6 sm:px-10 lg:pb-5 lg:px-14 py-8 lg:py-0"
                 data-testid="wardrobe-section"
             >
-                <div className="max-w-[1500px] mx-auto w-full h-full flex flex-col justify-between">
+                <div className="max-w-[1500px] mx-auto w-full flex-1 flex flex-col justify-between py-6 lg:py-0">
                     {/* Header Row */}
                     <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-4 sm:mb-5 shrink-0">
                         <div>
@@ -96,7 +96,7 @@ export default function Wardrobe() {
                             <Link
                                 key={c.no}
                                 to={`/wardrobe/${c.slug}`}
-                                className="cat-card group block w-full h-full relative"
+                                className="cat-card group block w-full h-56 sm:h-full relative"
                                 data-testid={`wardrobe-card-${c.slug}`}
                             >
                                 <div className="relative w-full h-full overflow-hidden">
@@ -128,10 +128,10 @@ export default function Wardrobe() {
             {/* FRAME 2: Chapter II Eyebrow + Categories 04-06 */}
             <section
                 id="wardrobe-part2"
-                className="relative bg-[var(--bone)] text-[var(--ink)] h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-4 px-4 sm:pb-4 sm:px-4 lg:pb-5 lg:px-5"
+                className="relative bg-[var(--bone)] text-[var(--ink)] min-h-screen lg:h-screen w-full flex flex-col pt-[76px] sm:pt-[84px] lg:pt-[92px] pb-12 px-6 sm:px-10 lg:pb-5 lg:px-14 py-8 lg:py-0"
                 data-testid="wardrobe-section-2"
             >
-                <div className="max-w-[1500px] mx-auto w-full h-full flex flex-col justify-between">
+                <div className="max-w-[1500px] mx-auto w-full flex-1 flex flex-col justify-between py-6 lg:py-0">
                     {/* Header Row */}
                     <div className="flex items-center justify-between mb-4 sm:mb-5 shrink-0">
                         <p className="eyebrow">The Wardrobe — Chapter II</p>
@@ -146,7 +146,7 @@ export default function Wardrobe() {
                             <Link
                                 key={c.no}
                                 to={`/wardrobe/${c.slug}`}
-                                className="cat-card group block w-full h-full relative"
+                                className="cat-card group block w-full h-56 sm:h-full relative"
                                 data-testid={`wardrobe-card-${c.slug}`}
                             >
                                 <div className="relative w-full h-full overflow-hidden">
