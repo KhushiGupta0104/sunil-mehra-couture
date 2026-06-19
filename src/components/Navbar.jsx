@@ -14,11 +14,11 @@ export default function Navbar({ onMenuOpen, menuOpen, onSearchOpen }) {
                 <div className="w-1/3" />
 
                 {/* Center — Brand Signature Logo */}
-                <Link to="/" className="flex flex-col items-center justify-center w-1/3" data-testid="navbar-brand">
+                <Link to="/" className="flex flex-col items-center justify-center w-1/3 py-1" data-testid="navbar-brand">
                     <img 
                         src={logoImg} 
                         alt="Sunil Mehra" 
-                        className="h-16 sm:h-20 lg:h-24 w-auto object-contain mix-blend-multiply my-[-15px] sm:my-[-20px]" 
+                        className="h-8 sm:h-10 lg:h-12 w-auto object-contain mix-blend-multiply" 
                     />
                 </Link>
 

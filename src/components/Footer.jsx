@@ -12,11 +12,11 @@ export default function Footer() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start pb-16 border-b border-[rgba(250,246,239,0.12)]">
                     
                     {/* Brand column */}
-                    <div className="flex flex-col items-start">
+                    <div className="flex flex-col items-start py-2">
                         <img 
                             src={logoImg} 
                             alt="Sunil Mehra" 
-                            className="h-20 sm:h-24 lg:h-28 w-auto object-contain invert mix-blend-screen ml-[-25px] my-[-20px]" 
+                            className="h-12 sm:h-16 lg:h-20 w-auto object-contain invert mix-blend-screen" 
                         />
                     </div>
 
