@@ -1,4 +1,5 @@
 import React from "react";
+import logoImg from "@/assets/images/logo.jpg";
 
 export default function Footer() {
     return (
@@ -11,13 +12,12 @@ export default function Footer() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start pb-16 border-b border-[rgba(250,246,239,0.12)]">
                     
                     {/* Brand column */}
-                    <div>
-                        <p className="font-display text-5xl sm:text-6xl tracking-[0.05em]">
-                            SUNIL <span className="font-italic-serif italic font-light text-[var(--champagne)]">Mehra</span>
-                        </p>
-                        <p className="font-italic-serif text-sm opacity-80 mt-3 tracking-[0.2em] uppercase">
-                            couture · est. 1984
-                        </p>
+                    <div className="flex flex-col items-start">
+                        <img 
+                            src={logoImg} 
+                            alt="Sunil Mehra" 
+                            className="h-20 sm:h-24 lg:h-28 w-auto object-contain invert mix-blend-screen ml-[-25px] my-[-20px]" 
+                        />
                     </div>
 
                     {/* Contact details column */}
@@ -42,10 +42,6 @@ export default function Footer() {
                             <div className="flex gap-4 font-luxe uppercase tracking-[0.25em] text-[10px] mt-4">
                                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--champagne)] transition">
                                     Instagram
-                                </a>
-                                <span>·</span>
-                                <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-[var(--champagne)] transition">
-                                    Journal
                                 </a>
                             </div>
                         </div>

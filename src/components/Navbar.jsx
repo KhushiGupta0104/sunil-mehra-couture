@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logoImg from "@/assets/images/logo.jpg";
 
 export default function Navbar({ onMenuOpen, menuOpen, onSearchOpen }) {
     return (
@@ -12,14 +13,13 @@ export default function Navbar({ onMenuOpen, menuOpen, onSearchOpen }) {
                 {/* Left — Empty spacer to maintain symmetry */}
                 <div className="w-1/3" />
 
-                {/* Center — Brand Wordmark */}
-                <Link to="/" className="text-center w-1/3 flex flex-col items-center" data-testid="navbar-brand">
-                    <p className="font-display text-[clamp(18px,2.2vw,26px)] leading-none tracking-[0.18em] text-[var(--ink)]">
-                        SUNIL MEHRA
-                    </p>
-                    <p className="font-italic-serif text-[10px] sm:text-[11px] opacity-80 mt-0.5 tracking-[0.2em] text-[var(--ink)]">
-                        couture · est. 1984
-                    </p>
+                {/* Center — Brand Signature Logo */}
+                <Link to="/" className="flex flex-col items-center justify-center w-1/3" data-testid="navbar-brand">
+                    <img 
+                        src={logoImg} 
+                        alt="Sunil Mehra" 
+                        className="h-16 sm:h-20 lg:h-24 w-auto object-contain mix-blend-multiply my-[-15px] sm:my-[-20px]" 
+                    />
                 </Link>
 
                 {/* Right — Search Button */}
