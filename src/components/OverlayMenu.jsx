@@ -8,11 +8,8 @@ const MotionLink = motion(Link);
 const MENU = [
     { label: "Couture", hover: "the atelier", to: "/atelier" },
     { label: "The Wardrobe", hover: "six chapters", to: "/wardrobe" },
-    { label: "Featured", hover: "new in", to: "/#featured" },
     { label: "Gallery", hover: "celebrity style", to: "/gallery" },
-    { label: "The Designer", hover: "about sunil mehra", to: "/#designer" },
     { label: "Lookbook", hover: "stories in cloth", to: "/editorial" },
-    { label: "Salons", hover: "by invitation", to: "/#salons" },
     { label: "Appointment", hover: "private fitting", to: "/#request-form" },
 ];
 

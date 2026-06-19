@@ -43,7 +43,7 @@ export default function Editorial() {
                             Stories, <span className="font-italic-serif italic">in cloth.</span>
                         </h2>
                     </div>
-                    <a href="#" className="hairline-link" data-testid="editorial-view-lookbook">
+                    <a href="#" onClick={(e) => e.preventDefault()} className="hairline-link" data-testid="editorial-view-lookbook">
                         View Lookbook <span aria-hidden>→</span>
                     </a>
                 </div>
@@ -54,6 +54,7 @@ export default function Editorial() {
                         <a
                             key={s.no}
                             href="#"
+                            onClick={(e) => e.preventDefault()}
                             className="block group w-full h-full flex flex-col"
                             data-testid={`editorial-${s.no}`}
                         >

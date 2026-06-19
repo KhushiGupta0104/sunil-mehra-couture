@@ -101,7 +101,7 @@ export default function Featured() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16">
                         {IVORY_PRODUCTS.map((prod) => (
                             <div key={prod.id} className="w-full flex flex-col">
-                                <a href="#" className="block w-full flex flex-col group" data-testid={`product-${prod.id}`}>
+                                <a href="#" onClick={(e) => e.preventDefault()} className="block w-full flex flex-col group" data-testid={`product-${prod.id}`}>
                                     <div className="relative overflow-hidden border border-[var(--hairline)] aspect-[3/4] bg-[var(--cream)] shadow-sm">
                                         <img src={prod.front} alt={prod.name} loading="lazy" className="img-front absolute inset-0 w-full h-full object-cover object-top transition duration-700" />
                                         <img src={prod.back} alt={prod.name} loading="lazy" className="img-back absolute inset-0 w-full h-full object-cover object-top opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -118,7 +118,6 @@ export default function Featured() {
                                     </div>
                                     <div className="mt-4 flex items-start justify-between gap-4 w-full">
                                         <h4 className="font-luxe text-xs uppercase tracking-[0.1em] text-[var(--ink)] group-hover:text-[var(--bronze)] transition duration-300">{prod.name}</h4>
-                                        <p className="font-display text-sm font-medium whitespace-nowrap text-[var(--ink)]">{prod.price}</p>
                                     </div>
                                 </a>
                             </div>
@@ -138,7 +137,7 @@ export default function Featured() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16">
                         {COLORED_PRODUCTS.map((prod) => (
                             <div key={prod.id} className="w-full flex flex-col">
-                                <a href="#" className="block w-full flex flex-col group" data-testid={`product-${prod.id}`}>
+                                <a href="#" onClick={(e) => e.preventDefault()} className="block w-full flex flex-col group" data-testid={`product-${prod.id}`}>
                                     <div className="relative overflow-hidden border border-[var(--hairline)] aspect-[3/4] bg-[var(--cream)] shadow-sm">
                                         <img src={prod.front} alt={prod.name} loading="lazy" className="img-front absolute inset-0 w-full h-full object-cover object-top transition duration-700" />
                                         <img src={prod.back} alt={prod.name} loading="lazy" className="img-back absolute inset-0 w-full h-full object-cover object-top opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -155,7 +154,6 @@ export default function Featured() {
                                     </div>
                                     <div className="mt-4 flex items-start justify-between gap-4 w-full">
                                         <h4 className="font-luxe text-xs uppercase tracking-[0.1em] text-[var(--ink)] group-hover:text-[var(--bronze)] transition duration-300">{prod.name}</h4>
-                                        <p className="font-display text-sm font-medium whitespace-nowrap text-[var(--ink)]">{prod.price}</p>
                                     </div>
                                 </a>
                             </div>

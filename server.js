@@ -18,16 +18,6 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Helper function to format values safely for CSV
-function escapeCSV(field) {
-    if (field === null || field === undefined) return '';
-    const stringified = String(field);
-    if (stringified.includes(',') || stringified.includes('\n') || stringified.includes('\r') || stringified.includes('"')) {
-        return `"${stringified.replace(/"/g, '""')}"`;
-    }
-    return stringified;
-}
-
 // API endpoint to receive appointment requests
 app.post('/api/appointments', async (req, res) => {
     try {
@@ -42,26 +32,21 @@ app.post('/api/appointments', async (req, res) => {
         }
 
         const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
-        const csvFilePath = path.join(__dirname, 'appointments.csv');
+        const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL;
 
-        // Check if file exists to see if we need to write headers
-        const fileExists = fs.existsSync(csvFilePath);
-        const headers = 'Timestamp,Name,Email,Message / Preferred Fitting Time\n';
-        const row = `${escapeCSV(timestamp)},${escapeCSV(name)},${escapeCSV(email)},${escapeCSV(message)}\n`;
-
-        if (!fileExists) {
-            fs.writeFileSync(csvFilePath, headers + row, 'utf8');
-        } else {
-            fs.appendFileSync(csvFilePath, row, 'utf8');
+        if (!webhookUrl || webhookUrl.trim() === '') {
+            console.warn('[Backend Warning] GOOGLE_SHEET_WEBHOOK_URL is not set in your .env file.');
+            console.log(`[Backend Log Simulation] Timestamp: ${timestamp}, Name: ${name}, Email: ${email}, Message: ${message}`);
+            return res.status(200).json({
+                success: true,
+                message: 'Your appointment request was simulated successfully. (Warning: GOOGLE_SHEET_WEBHOOK_URL not set)'
+            });
         }
 
-        console.log(`[Backend] Appointment request for "${name}" successfully written to CSV.`);
-
-        // Optional forwarding to Google Sheets webhook (Apps Script)
-        const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL;
-        if (webhookUrl && webhookUrl.trim() !== '') {
-            console.log(`[Backend] Forwarding request to Google Sheets: ${webhookUrl}`);
-            fetch(webhookUrl, {
+        console.log(`[Backend] Forwarding appointment for "${name}" to Google Sheets...`);
+        
+        try {
+            const response = await fetch(webhookUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -72,24 +57,29 @@ app.post('/api/appointments', async (req, res) => {
                     email,
                     message
                 })
-            })
-            .then(async (response) => {
-                if (response.ok) {
-                    console.log('[Backend] Successfully forwarded to Google Sheets Webhook.');
-                } else {
-                    const text = await response.text();
-                    console.error(`[Backend] Google Sheets Webhook returned error (${response.status}): ${text}`);
-                }
-            })
-            .catch((err) => {
-                console.error('[Backend] Error forwarding to Google Sheets Webhook:', err.message);
+            });
+
+            if (response.ok) {
+                console.log('[Backend] Successfully logged to Google Sheets.');
+                return res.status(200).json({
+                    success: true,
+                    message: 'Your appointment request has been logged successfully.'
+                });
+            } else {
+                const text = await response.text();
+                console.error(`[Backend] Google Sheets Webhook returned error (${response.status}): ${text}`);
+                return res.status(502).json({
+                    success: false,
+                    error: 'Failed to log request to Google Sheets. Webhook returned an error.'
+                });
+            }
+        } catch (fetchErr) {
+            console.error('[Backend] Network error forwarding to Google Sheets:', fetchErr.message);
+            return res.status(502).json({
+                success: false,
+                error: 'Failed to connect to the Google Sheets webhook. Please check the URL configuration.'
             });
         }
-
-        return res.status(200).json({
-            success: true,
-            message: 'Your appointment request has been logged successfully.'
-        });
 
     } catch (error) {
         console.error('[Backend Error]:', error);

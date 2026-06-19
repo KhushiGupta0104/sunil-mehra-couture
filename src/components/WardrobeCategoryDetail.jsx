@@ -482,13 +482,10 @@ export default function WardrobeCategoryDetail() {
                             </div>
 
                             {/* Card Text details */}
-                            <div className="mt-4 flex justify-between items-baseline gap-4 w-full">
+                            <div className="mt-4 w-full">
                                 <h3 className="font-luxe text-xs uppercase tracking-[0.1em] text-[var(--ink)] group-hover:text-[var(--bronze)] transition duration-300">
                                     {piece.name}
                                 </h3>
-                                <p className="font-display text-sm font-medium whitespace-nowrap text-[var(--ink)]">
-                                    {piece.price}
-                                </p>
                             </div>
                         </div>
                     ))}
@@ -574,7 +571,7 @@ export default function WardrobeCategoryDetail() {
                         {/* Lightbox Bottom */}
                         <div className="text-center shrink-0 max-w-xl mx-auto flex flex-col items-center">
                             <span className="font-luxe text-[9px] uppercase tracking-[0.2em] text-[var(--champagne)]">
-                                {selectedPiece.name} — {selectedPiece.price}
+                                {selectedPiece.name}
                             </span>
                             <p className="font-display text-white text-sm mt-2">
                                 Hand-finished tailoring from the House of Sunil Mehra.

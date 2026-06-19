@@ -44,7 +44,7 @@ export default function Footer() {
                                     Instagram
                                 </a>
                                 <span>·</span>
-                                <a href="#" className="hover:text-[var(--champagne)] transition">
+                                <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-[var(--champagne)] transition">
                                     Journal
                                 </a>
                             </div>
