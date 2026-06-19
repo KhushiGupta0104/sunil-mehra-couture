@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Import local images
 // Ivory Chapter (Beige/White/Cream)
@@ -71,7 +72,34 @@ const COLORED_PRODUCTS = [
     },
 ];
 
+const ALL_PRODUCTS = [...IVORY_PRODUCTS, ...COLORED_PRODUCTS];
+
 export default function Featured() {
+    const [selectedProd, setSelectedProd] = useState(null);
+
+    useEffect(() => {
+        if (selectedProd) {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
+        return () => document.body.classList.remove("no-scroll");
+    }, [selectedProd]);
+
+    const handlePrev = (e) => {
+        e.stopPropagation();
+        const currentIndex = ALL_PRODUCTS.findIndex((p) => p.id === selectedProd.id);
+        const prevIndex = (currentIndex - 1 + ALL_PRODUCTS.length) % ALL_PRODUCTS.length;
+        setSelectedProd(ALL_PRODUCTS[prevIndex]);
+    };
+
+    const handleNext = (e) => {
+        e.stopPropagation();
+        const currentIndex = ALL_PRODUCTS.findIndex((p) => p.id === selectedProd.id);
+        const nextIndex = (currentIndex + 1) % ALL_PRODUCTS.length;
+        setSelectedProd(ALL_PRODUCTS[nextIndex]);
+    };
+
     return (
         <section
             id="featured"
@@ -101,7 +129,7 @@ export default function Featured() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16">
                         {IVORY_PRODUCTS.map((prod) => (
                             <div key={prod.id} className="w-full flex flex-col">
-                                <a href="#" onClick={(e) => e.preventDefault()} className="block w-full flex flex-col group" data-testid={`product-${prod.id}`}>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setSelectedProd(prod); }} className="block w-full flex flex-col group" data-testid={`product-${prod.id}`}>
                                     <div className="relative overflow-hidden border border-[var(--hairline)] aspect-[3/4] bg-[var(--cream)] shadow-sm">
                                         <img src={prod.front} alt={prod.name} loading="lazy" className="img-front absolute inset-0 w-full h-full object-cover object-top transition duration-700" />
                                         <img src={prod.back} alt={prod.name} loading="lazy" className="img-back absolute inset-0 w-full h-full object-cover object-top opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -137,7 +165,7 @@ export default function Featured() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16">
                         {COLORED_PRODUCTS.map((prod) => (
                             <div key={prod.id} className="w-full flex flex-col">
-                                <a href="#" onClick={(e) => e.preventDefault()} className="block w-full flex flex-col group" data-testid={`product-${prod.id}`}>
+                                <a href="#" onClick={(e) => { e.preventDefault(); setSelectedProd(prod); }} className="block w-full flex flex-col group" data-testid={`product-${prod.id}`}>
                                     <div className="relative overflow-hidden border border-[var(--hairline)] aspect-[3/4] bg-[var(--cream)] shadow-sm">
                                         <img src={prod.front} alt={prod.name} loading="lazy" className="img-front absolute inset-0 w-full h-full object-cover object-top transition duration-700" />
                                         <img src={prod.back} alt={prod.name} loading="lazy" className="img-back absolute inset-0 w-full h-full object-cover object-top opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -162,6 +190,76 @@ export default function Featured() {
                 </div>
 
             </div>
+
+            {/* Lightbox Modal */}
+            <AnimatePresence>
+                {selectedProd && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedProd(null)}
+                        className="fixed inset-0 z-[100] flex flex-col justify-between bg-black/95 backdrop-blur-md p-6 sm:p-10"
+                    >
+                        {/* Lightbox Top */}
+                        <div className="flex justify-between items-center w-full shrink-0">
+                            <span className="font-luxe text-[9px] uppercase tracking-[0.3em] text-[var(--champagne)]">
+                                FEATURED / PIECES — {selectedProd.name.toUpperCase()}
+                            </span>
+                            <button
+                                onClick={() => setSelectedProd(null)}
+                                className="font-luxe text-[10px] uppercase tracking-[0.3em] text-white hover:text-[var(--champagne)] border border-white/20 hover:border-[var(--champagne)] px-6 py-3 transition duration-300"
+                            >
+                                Close <span aria-hidden>×</span>
+                            </button>
+                        </div>
+
+                        {/* Lightbox Middle */}
+                        <div className="relative flex items-center justify-center grow my-6 max-h-[75vh]">
+                            <button
+                                onClick={handlePrev}
+                                className="absolute left-0 sm:left-4 z-10 w-12 h-12 flex items-center justify-center text-white hover:text-[var(--champagne)] bg-black/50 hover:bg-black/80 rounded-full border border-white/10 transition duration-300"
+                                aria-label="Previous image"
+                            >
+                                ❮
+                            </button>
+
+                            <motion.div
+                                key={selectedProd.id}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.95 }}
+                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                className="max-w-full max-h-full aspect-[3/4] overflow-hidden"
+                            >
+                                <img
+                                    src={selectedProd.front}
+                                    alt={selectedProd.name}
+                                    className="max-w-full max-h-[65vh] sm:max-h-[70vh] object-contain mx-auto shadow-2xl border border-white/10"
+                                />
+                            </motion.div>
+
+                            <button
+                                onClick={handleNext}
+                                className="absolute right-0 sm:right-4 z-10 w-12 h-12 flex items-center justify-center text-white hover:text-[var(--champagne)] bg-black/50 hover:bg-black/80 rounded-full border border-white/10 transition duration-300"
+                                aria-label="Next image"
+                            >
+                                ❯
+                            </button>
+                        </div>
+
+                        {/* Lightbox Bottom */}
+                        <div className="text-center shrink-0 max-w-xl mx-auto flex flex-col items-center">
+                            <span className="font-luxe text-[9px] uppercase tracking-[0.2em] text-[var(--champagne)]">
+                                {selectedProd.name}
+                            </span>
+                            <p className="font-display text-white text-sm mt-2">
+                                Hand-finished tailoring from the House of Sunil Mehra.
+                            </p>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }
