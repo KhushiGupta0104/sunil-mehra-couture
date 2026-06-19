@@ -18,7 +18,8 @@ export default function Navbar({ onMenuOpen, menuOpen, onSearchOpen }) {
                     <img 
                         src={logoImg} 
                         alt="Sunil Mehra" 
-                        className="h-8 sm:h-10 lg:h-12 w-auto object-contain mix-blend-multiply" 
+                        className="h-8 sm:h-10 lg:h-12 w-auto object-contain" 
+                        style={{ filter: "contrast(200%) brightness(105%)", mixBlendMode: "multiply" }}
                     />
                 </Link>
 

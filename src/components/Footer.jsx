@@ -16,7 +16,8 @@ export default function Footer() {
                         <img 
                             src={logoImg} 
                             alt="Sunil Mehra" 
-                            className="h-12 sm:h-16 lg:h-20 w-auto object-contain invert mix-blend-screen" 
+                            className="h-12 sm:h-16 lg:h-20 w-auto object-contain" 
+                            style={{ filter: "invert(1) contrast(300%) brightness(100%)", mixBlendMode: "screen" }}
                         />
                     </div>
 
@@ -40,7 +41,7 @@ export default function Footer() {
                                 E: <a href="mailto:atelier@sunilmehra.com" className="hover:text-[var(--champagne)] transition">atelier@sunilmehra.com</a>
                             </p>
                             <div className="flex gap-4 font-luxe uppercase tracking-[0.25em] text-[10px] mt-4">
-                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--champagne)] transition">
+                                <a href="https://www.instagram.com/sunilmehraart/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--champagne)] transition">
                                     Instagram
                                 </a>
                             </div>
