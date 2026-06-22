@@ -9,7 +9,9 @@ const MENU = [
     { label: "Couture", hover: "the atelier", to: "/atelier" },
     { label: "The Wardrobe", hover: "six chapters", to: "/wardrobe" },
     { label: "Gallery", hover: "celebrity style", to: "/gallery" },
+    { label: "About Us", hover: "about sunil mehra", to: "/#designer" },
     { label: "Lookbook", hover: "stories in cloth", to: "/editorial" },
+    { label: "Salons", hover: "by invitation", to: "/#salons" },
     { label: "Appointment", hover: "private fitting", to: "/#request-form" },
 ];
 

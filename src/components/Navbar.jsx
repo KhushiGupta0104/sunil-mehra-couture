@@ -63,6 +63,12 @@ export default function Navbar({ onMenuOpen, menuOpen, onSearchOpen }) {
                     <Link to="/gallery" className="hidden lg:inline-block hover:opacity-60 transition">
                         Gallery
                     </Link>
+                    <Link to="/#designer" className="hidden lg:inline-block hover:opacity-60 transition">
+                        About Us
+                    </Link>
+                    <Link to="/#salons" className="hidden lg:inline-block hover:opacity-60 transition">
+                        Salons
+                    </Link>
                     <Link to="/#request-form" className="hover:opacity-60 transition font-medium text-[var(--bronze)]">
                         Book Appointment
                     </Link>

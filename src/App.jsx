@@ -8,6 +8,7 @@ import Featured from "@/components/Featured";
 import Designer from "@/components/Designer";
 import Manifesto from "@/components/Manifesto";
 import Salons from "@/components/Salons";
+import OccasionEdit from "@/components/OccasionEdit";
 import Footer from "@/components/Footer";
 import SearchOverlay from "@/components/SearchOverlay";
 
@@ -77,6 +78,7 @@ const Home = () => {
         <PageLayout>
             <Hero />
             <Featured />
+            <OccasionEdit />
             <Designer />
             <Manifesto />
             <Salons />

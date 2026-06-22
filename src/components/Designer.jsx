@@ -1,5 +1,5 @@
 import React from "react";
-import designerImg from "@/assets/images/sunil_mehra.jpg";
+import designerImg from "@/assets/images/enhanced image Sunil mehra.png";
 
 export default function Designer() {
     return (
