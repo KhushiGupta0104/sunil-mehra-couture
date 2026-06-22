@@ -9,6 +9,8 @@ import Designer from "@/components/Designer";
 import Manifesto from "@/components/Manifesto";
 import Salons from "@/components/Salons";
 import OccasionEdit from "@/components/OccasionEdit";
+import ShopTheLook from "@/components/ShopTheLook";
+import BespokeJourney from "@/components/BespokeJourney";
 import Footer from "@/components/Footer";
 import SearchOverlay from "@/components/SearchOverlay";
 
@@ -79,6 +81,8 @@ const Home = () => {
             <Hero />
             <Featured />
             <OccasionEdit />
+            <ShopTheLook />
+            <BespokeJourney />
             <Designer />
             <Manifesto />
             <Salons />
